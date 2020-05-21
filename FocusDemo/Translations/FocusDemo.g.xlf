@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="FocusDemo">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 2990342104 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Software Inc Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Software Inc Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2990342104 - Field 215310393 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KEY</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Software Inc Setup - Field KEY - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2990342104 - Field 1705006898 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subscription Customization</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Software Inc Setup - Field Subscription Customization - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2990342104 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Software Inc Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Software Inc Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1919882368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subscription Overview Focus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Subscription Overview Focus - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1919882368 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Subscription Overview Focus - Field Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1919882368 - Field 166038250 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Subscription Overview Focus - Field Invoice No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1919882368 - Field 568743302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Subscription Overview Focus - Field Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1919882368 - Field 474480784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Subscription Overview Focus - Field Start Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1919882368 - Field 2649176925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>End Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Subscription Overview Focus - Field End Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1919882368 - Field 1084607646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>User Count</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Subscription Overview Focus - Field User Count - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1919882368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subscription Overview</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Subscription Overview Focus - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 305110883 - Field 1065921906 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Subscription Item</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Item Focus - Field Subscription Item - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3863662552 - Field 1084607646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>User Count</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension P. Sales Line Focus - Field User Count - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3863662552 - Field 474480784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Subscription Start</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension P. Sales Line Focus - Field Start Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3863662552 - Field 2649176925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Subscription End</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension P. Sales Line Focus - Field End Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 668541790 - Change 2704404533 - Method 3279464882 - NamedType 3527596813" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>This is a subscription item, please use the subscription field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Line Focus - Change Quantity - Method OnBeforeValidate - NamedType ThisIsASubsciptionItemLbl</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 668541790 - Field 1084607646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>User Count</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Line Focus - Field User Count - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 668541790 - Field 474480784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Subscription Start</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Line Focus - Field Start Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 668541790 - Field 474480784 - Method 2126772001 - NamedType 2018870556" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>You cannot end a subscription before it starts!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Line Focus - Field Start Date - Method OnValidate - NamedType YouCannotEndSubsriptionBeforeItStartsLbl</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 668541790 - Field 2649176925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Subscription End</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Line Focus - Field End Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 668541790 - Field 2649176925 - Method 2126772001 - NamedType 2018870556" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>You cannot end a subscription before it starts!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Line Focus - Field End Date - Method OnValidate - NamedType YouCannotEndSubsriptionBeforeItStartsLbl</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

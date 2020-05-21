@@ -1,0 +1,39 @@
+{
+  "id": "5e33c34c-6601-4f1e-9db4-cb00bc9f3738",
+  "name": "FocusDemo",
+  "publisher": "Erik Hougaard",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+      "publisher": "Microsoft",
+      "name": "System Application",
+      "version": "16.0.0.0"
+    },
+    {
+      "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+      "publisher": "Microsoft",
+      "name": "Base Application",
+      "version": "16.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "platform": "16.0.0.0",
+  "idRanges": [
+    {
+      "from": 72100,
+      "to": 72149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://FocusDemo.com/help/",
+  "showMyCode": true,
+  "features": ["TranslationFile"],
+  "runtime": "5.0"
+}
