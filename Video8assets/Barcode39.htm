@@ -1,0 +1,19 @@
+<PRE>
+<b>Barcode 3 of 9 (code39) generation codeunit</b>
+This upload contains a codeunit that will generate a code 3 of 9 barcode
+without using any external resources; no fonts, no DLLs, nothing.
+
+<b>How it works</b>
+The codeunit generates a BMP 'file' on the fly using C/AL. The image is stored
+in a BLOB field on some record. The record is never written to the database so
+it doesn't matter what table is used. This code uses the 'Object' table.
+
+<b>Advantages</b>
+Unlike a font (eg: http://www.squaregear.net/fonts/free3of9.shtml ) this can
+be displayed at any size in both the X and Y dimensions. In addition the font
+doesn't have to be installed on the client machine.
+
+<b>The example report</b>
+Also included in this upload is a simple report that prints a barcode for each
+item in the database using the "Vendor item No."
+</PRE>
