@@ -51,12 +51,15 @@ page 50600 "Perf Test Page"
                     Convert2: Codeunit "Base64 Handler";
                     StartTime: Time;
                     D: Dialog;
+                    TB: TextBuilder;
                 begin
                     D.Open('Running Test');
                     for i := 1 to DataSize do begin
                         ch[1] := (i mod 32) + 64;
-                        TestTxt += ch;
+                        //TestTxt += ch;
+                        TB.Append(ch);
                     end;
+                    TestTxt := TB.ToText();
                     StartTime := Time();
                     Res1 := Convert1.ToBase64(TestTxt);
                     T1 := Time() - StartTime;

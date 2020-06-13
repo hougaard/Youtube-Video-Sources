@@ -70,6 +70,7 @@ codeunit 50600 "Base64 Handler"
         Pos: Integer;
         CurrentByte: text;
         i: Integer;
+        TB: TextBuilder;
     begin
         if Length MOD 3 = 0 then begin
             PaddingCount := 0;
@@ -86,9 +87,11 @@ codeunit 50600 "Base64 Handler"
         Pos := 1;
         while Pos < Length2 * 8 do begin
             CurrentByte := CopyStr(Value, Pos, 6);
-            ReturnValue += GetBase64Char(BinaryToInt(CurrentByte));
+            //ReturnValue += GetBase64Char(BinaryToInt(CurrentByte));
+            TB.Append(GetBase64Char(BinaryToInt(CurrentByte)));
             pos += 6;
         end;
+        ReturnValue := TB.ToText();
 
         // Replace last characters with '='
         for i := 1 to PaddingCount do begin
@@ -124,13 +127,16 @@ codeunit 50600 "Base64 Handler"
         IntValue: Integer;
         i: Integer;
         BinaryValue: text;
+        TB: TextBuilder;
     begin
         for i := 1 to StrLen(value) do begin
             IntValue := value[i];
             BinaryValue := IntToBinary(IntValue);
             BinaryValue := IncreaseStringLength(BinaryValue, ByteLength);
-            ReturnValue += BinaryValue;
+            //ReturnValue += BinaryValue;
+            TB.Append(BinaryValue);
         end;
+        ReturnValue := TB.ToText();
     end;
 
     local procedure BinaryToText(Value: Text) ReturnValue: Text;
