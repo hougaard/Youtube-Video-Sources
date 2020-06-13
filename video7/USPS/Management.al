@@ -3,31 +3,66 @@ codeunit 50100 "USPS Management"
     procedure VerifyCustomerAddress(var Customer: Record Customer)
     var
         Setup: Record "USPS Setup";
+        CompareRec: Record "USPS Address Verify";
+        Parameters: XmlDocument;
+        Result: XmlDocument;
+        Address: XmlElement;
+        AVR: XmlElement;
+        ResultTxt: Text;
+
+    begin
+        if not Setup.GET() then
+            error('USPS Setup is needed, please enter URL and UserID');
+        PrepareXML(CompareRec, Setup);
+    end;
+
+    local procedure PrepareXML(var CompareRec: Record "USPS Address Verify"; var Setup: Record "USPS Setup")
+    var
         Parameters: XmlDocument;
         Result: XmlDocument;
         Address: XmlElement;
         AVR: XmlElement;
         ResultTxt: Text;
     begin
-        if not Setup.GET() then
-            error('USPS Setup is needed, please enter URL and UserID');
         Parameters := XmlDocument.Create();
         Address := XmlElement.Create('Address');
         Address.Attributes().Set('ID', '0');
-        Address.Add(AddField('FirmName', Customer.Name));
-        Address.Add(AddField('Address1', Customer.Address));
-        Address.Add(AddField('Address2', Customer."Address 2"));
-        Address.Add(AddField('City', Customer.City));
-        Address.Add(AddField('State', Customer.County));
-        Address.Add(AddField('Zip5', Customer."Post Code"));
+        Address.Add(AddField('FirmName', CompareRec.Name));
+        Address.Add(AddField('Address1', CompareRec."Address 1"));
+        Address.Add(AddField('Address2', CompareRec."Address 2"));
+        Address.Add(AddField('City', CompareRec.City));
+        Address.Add(AddField('State', CompareRec.County));
+        Address.Add(AddField('Zip5', CompareRec."Post Code"));
         Address.Add(AddField('Zip4', '')); // TODO: Split and Fix!
         AVR := XmlElement.Create('AddressValidateRequest');
         AVR.Attributes().Set('USERID', Setup.UserID);
         AVR.Add(Address);
         Parameters.Add(AVR);
         Result := CallWebService('Verify', Parameters);
-        Result.WriteTo(ResultTxt);
-        Message(ResultTxt);
+
+        CompareRec."USPS FirmName" := GetField(Result, 'AddressValidateResponse/Address[1]/FirmName');
+        CompareRec."Address 1" := GetField(Result, 'AddressValidateResponse/Address[1]/Address1');
+        CompareRec."Address 2" := GetField(Result, 'AddressValidateResponse/Address[1]/Address2');
+    end;
+
+    local procedure GetFieldBool(var Xml: XmlDocument; Path: Text): Boolean;
+    var
+        v: Variant;
+        N: XmlNode;
+        b: Boolean;
+    begin
+        Xml.SelectSingleNode(Path, N);
+        Evaluate(b, N.AsXmlElement().InnerText, 9);
+        exit(b);
+    end;
+
+    local procedure GetField(var Xml: XmlDocument; Path: Text): Text;
+    var
+        v: Variant;
+        N: XmlNode;
+    begin
+        Xml.SelectSingleNode(Path, N);
+        exit(N.AsXmlElement().InnerText);
     end;
 
     local procedure AddField(Name: Text; Value: Text): XmlElement
@@ -73,4 +108,6 @@ codeunit 50100 "USPS Management"
         end else
             error('Cannot contact USPS, connection error!');
     end;
+
+
 }
