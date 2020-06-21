@@ -3,6 +3,7 @@ codeunit 50100 "USPS Management"
     procedure ApplyAddress(CompareRec: Record "USPS Address Verify")
     var
         Customer: Record Customer;
+        Vendor: Record Vendor;
     begin
         case CompareRec.Type of
             CompareRec.Type::Customer:
@@ -16,7 +17,48 @@ codeunit 50100 "USPS Management"
                     Customer.Validate(County, CompareRec."USPS State");
                     Customer.Modify(true);
                 end;
+            CompareRec.Type::Vendor:
+                begin
+                    Vendor.GET(CompareRec."No.");
+                    Vendor.Validate(Name, CompareRec."USPS FirmName");
+                    Vendor.VAlidate(Address, CompareRec."USPS Address 1");
+                    Vendor.VAlidate("Address 2", CompareRec."USPS Address 2");
+                    Vendor.Validate(City, CompareREc."USPS City");
+                    Vendor.Validate("Post Code", CompareRec."USPS Zip5");
+                    Vendor.Validate(County, CompareRec."USPS State");
+                    Vendor.Modify(true);
+                end;
         end;
+    end;
+
+    procedure VerifyVendorAddress(var Vendor: Record Vendor)
+    var
+        Setup: Record "USPS Setup";
+        CompareRec: Record "USPS Address Verify";
+        ResultTxt: Text;
+
+    begin
+        if not Setup.GET() then
+            error('USPS Setup is needed, please enter URL and UserID');
+
+        If not CompareRec.GET(CompareRec.Type::Customer, Vendor."No.") then begin
+            CompareRec.INIT;
+            CompareREc.Type := CompareRec.Type::Customer;
+            CompareRec."No." := Vendor."No.";
+            CompareRec.Insert(true);
+        end;
+        CompareRec.Name := Vendor.Name;
+        CompareRec."Address 1" := Vendor.Address;
+        CompareRec."Address 2" := Vendor."Address 2";
+        CompareRec.City := Vendor.City;
+        CompareRec.County := Vendor.County;
+        CompareRec."Post Code" := Vendor."Post Code";
+
+        PrepareXML(CompareRec, Setup);
+
+        CompareRec.Modify();
+        Commit;
+        Page.run(50101, CompareRec);
     end;
 
     procedure VerifyCustomerAddress(var Customer: Record Customer)
@@ -60,6 +102,7 @@ codeunit 50100 "USPS Management"
         Address: XmlElement;
         AVR: XmlElement;
         ResultTxt: Text;
+        ErrorTxt: Text;
         ErrorResultLbl: Label 'USPS returned an error: %1', Comment = '%1 is the error text';
     begin
         Parameters := XmlDocument.Create();
@@ -76,38 +119,16 @@ codeunit 50100 "USPS Management"
         AVR.Attributes().Set('USERID', Setup.UserID);
         AVR.Add(Address);
         Parameters.Add(AVR);
+
         Result := CallWebService('Verify', Parameters);
 
-        /* Error return
-        <AddressValidateResponse>
-            <Address ID="0">
-            <Error>
-                <Number>-2147219402</Number>
-                <Source>clsAMS</Source>
-                <Description>Invalid State Code. </Description>
-                <HelpFile />
-                <HelpContext />
-            </Error>
-            </Address>
-        </AddressValidateResponse>
-        */
         if GetField(Result, 'AddressValidateResponse/Address[1]/Error/Description') <> '' then
             error(ErrorResultLbl, GetField(Result, 'AddressValidateResponse/Address[1]/Error/Description'));
 
-        /*
-        <AddressValidateResponse>
-            <Address ID="0">
-                <FirmName>TAB US, INC.</FirmName>
-                <Address1>STE 1051</Address1>
-                <Address2>1035 S SEMORAN BLVD</Address2>
-                <City>WINTER PARK</City>
-                <State>FL</State>
-                <Zip5>32792</Zip5>
-                <Zip4>5542</Zip4>
-            </Address>
-        </AddressValidateResponse>
-        */
-
+        if GetField(Result, 'AddressValidateResponse/Address[1]/Address1') = '' then begin
+            Result.WriteTo(ErrorTxt);
+            error('USPS did not return a value address. (but no error was shown, Debug informatoin: %1', ErrorTxt);
+        end;
         CompareRec."USPS FirmName" := GetField(Result, 'AddressValidateResponse/Address[1]/FirmName');
         CompareRec."USPS Address 1" := GetField(Result, 'AddressValidateResponse/Address[1]/Address1');
         CompareRec."USPS Address 2" := GetField(Result, 'AddressValidateResponse/Address[1]/Address2');
