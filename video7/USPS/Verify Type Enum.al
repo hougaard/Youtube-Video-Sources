@@ -1,4 +1,4 @@
-enum 50100 "USPS Verify Type"
+enum 50100 "USPS Verify Type Hgd"
 {
     Extensible = true;
 

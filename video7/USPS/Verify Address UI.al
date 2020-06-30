@@ -1,10 +1,11 @@
-page 50101 "USPS Verify Address"
+page 50101 "USPS Verify Address Hgd"
 {
 
     Caption = 'USPS Verify Address';
     PageType = Card;
-    SourceTable = "USPS Address Verify";
+    SourceTable = "USPS Address Verify Hgd";
     Editable = false;
+    UsageCategory = None;
 
     layout
     {
@@ -86,7 +87,7 @@ page 50101 "USPS Verify Address"
                 PromotedOnly = true;
                 trigger OnAction()
                 var
-                    Mgt: Codeunit "USPS Management";
+                    Mgt: Codeunit "USPS Management Hgd";
                 begin
                     if confirm('Update %1 %2 with USPS address?', true, Rec.Type, Rec.Name) then begin
                         Mgt.ApplyAddress(Rec);

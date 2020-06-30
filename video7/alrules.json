@@ -1,0 +1,17 @@
+{
+    "name":"Youtube rules!",
+    "description":"Rules for USPS App",
+    "rules":
+    [
+       {
+           "id" : "AA0215",
+           "action" : "Hidden",
+           "justification" : "No Microsoft, I'll dictate my own files names!"
+       },
+       {
+        "id" : "AA0214",
+        "action" : "Hidden",
+        "justification" : "Bad rule!"
+        }
+    ]
+}

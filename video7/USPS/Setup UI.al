@@ -1,9 +1,9 @@
-page 50100 "USPS Setup"
+page 50100 "USPS Setup Hgd"
 {
 
     Caption = 'USPS Setup';
     PageType = Card;
-    SourceTable = "USPS Setup";
+    SourceTable = "USPS Setup Hgd";
     UsageCategory = Administration;
     ApplicationArea = All;
 

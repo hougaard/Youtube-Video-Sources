@@ -1,11 +1,11 @@
-table 50101 "USPS Address Verify"
+table 50101 "USPS Address Verify Hgd"
 {
     Caption = 'USPS Address Verify';
     DataClassification = ToBeClassified;
 
     fields
     {
-        field(1; Type; Enum "USPS Verify Type")
+        field(1; Type; Enum "USPS Verify Type Hgd")
         {
             Caption = 'Type';
             DataClassification = SystemMetadata;

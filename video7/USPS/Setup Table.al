@@ -1,8 +1,8 @@
-table 50100 "USPS Setup"
+table 50100 "USPS Setup Hgd"
 {
     Caption = 'USPS Setup';
     DataClassification = ToBeClassified;
-    
+
     fields
     {
         field(1; UKEY; Code[10])
@@ -28,5 +28,5 @@ table 50100 "USPS Setup"
             Clustered = true;
         }
     }
-    
+
 }

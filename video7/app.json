@@ -1,15 +1,15 @@
 {
   "id": "2268ec00-abb2-4fd1-911b-a683187c869f",
-  "name": "video7",
-  "publisher": "Default publisher",
+  "name": "USPS Address Verification",
+  "publisher": "Erik Hougaard",
   "version": "1.0.0.0",
-  "brief": "",
-  "description": "",
-  "privacyStatement": "",
-  "EULA": "",
-  "help": "",
-  "url": "",
-  "logo": "",
+  "brief": "USPS Address Verification",
+  "description": "USPS Address Verification",
+  "privacyStatement": "https://hougaard.com",
+  "EULA": "https://hougaard.com",
+  "help": "https://hougaard.com",
+  "url": "https://hougaard.com",
+  "logo": "Logo.png",
   "dependencies": [
     {
       "id": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
@@ -34,5 +34,6 @@
   ],
   "contextSensitiveHelpUrl": "https://video7.com/help/",
   "showMyCode": true,
-  "runtime": "5.0"
+  "runtime": "5.0",
+  "features": ["TranslationFile"]
 }

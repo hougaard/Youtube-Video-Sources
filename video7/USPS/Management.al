@@ -1,6 +1,6 @@
-codeunit 50100 "USPS Management"
+codeunit 50100 "USPS Management Hgd"
 {
-    procedure ApplyAddress(CompareRec: Record "USPS Address Verify")
+    procedure ApplyAddress(CompareRec: Record "USPS Address Verify Hgd")
     var
         Customer: Record Customer;
         Vendor: Record Vendor;
@@ -10,8 +10,8 @@ codeunit 50100 "USPS Management"
                 begin
                     Customer.GET(CompareRec."No.");
                     Customer.Validate(Name, CompareRec."USPS FirmName");
-                    Customer.VAlidate(Address, CompareRec."USPS Address 1");
-                    Customer.VAlidate("Address 2", CompareRec."USPS Address 2");
+                    Customer.Validate(Address, CompareRec."USPS Address 1");
+                    Customer.Validate("Address 2", CompareRec."USPS Address 2");
                     Customer.Validate(City, CompareREc."USPS City");
                     Customer.Validate("Post Code", CompareRec."USPS Zip5");
                     Customer.Validate(County, CompareRec."USPS State");
@@ -33,16 +33,14 @@ codeunit 50100 "USPS Management"
 
     procedure VerifyVendorAddress(var Vendor: Record Vendor)
     var
-        Setup: Record "USPS Setup";
-        CompareRec: Record "USPS Address Verify";
-        ResultTxt: Text;
-
+        Setup: Record "USPS Setup Hgd";
+        CompareRec: Record "USPS Address Verify Hgd";
     begin
         if not Setup.GET() then
             error('USPS Setup is needed, please enter URL and UserID');
 
         If not CompareRec.GET(CompareRec.Type::Customer, Vendor."No.") then begin
-            CompareRec.INIT;
+            CompareRec.INIT();
             CompareREc.Type := CompareRec.Type::Customer;
             CompareRec."No." := Vendor."No.";
             CompareRec.Insert(true);
@@ -57,26 +55,20 @@ codeunit 50100 "USPS Management"
         PrepareXML(CompareRec, Setup);
 
         CompareRec.Modify();
-        Commit;
+        Commit();
         Page.run(50101, CompareRec);
     end;
 
     procedure VerifyCustomerAddress(var Customer: Record Customer)
     var
-        Setup: Record "USPS Setup";
-        CompareRec: Record "USPS Address Verify";
-        Parameters: XmlDocument;
-        Result: XmlDocument;
-        Address: XmlElement;
-        AVR: XmlElement;
-        ResultTxt: Text;
-
+        Setup: Record "USPS Setup Hgd";
+        CompareRec: Record "USPS Address Verify Hgd";
     begin
         if not Setup.GET() then
             error('USPS Setup is needed, please enter URL and UserID');
 
         If not CompareRec.GET(CompareRec.Type::Customer, Customer."No.") then begin
-            CompareRec.INIT;
+            CompareRec.INIT();
             CompareREc.Type := CompareRec.Type::Customer;
             CompareRec."No." := Customer."No.";
             CompareRec.Insert(true);
@@ -91,17 +83,16 @@ codeunit 50100 "USPS Management"
         PrepareXML(CompareRec, Setup);
 
         CompareRec.Modify();
-        Commit;
+        Commit();
         Page.run(50101, CompareRec);
     end;
 
-    local procedure PrepareXML(var CompareRec: Record "USPS Address Verify"; var Setup: Record "USPS Setup")
+    local procedure PrepareXML(var CompareRec: Record "USPS Address Verify Hgd"; var Setup: Record "USPS Setup Hgd")
     var
         Parameters: XmlDocument;
         Result: XmlDocument;
         Address: XmlElement;
         AVR: XmlElement;
-        ResultTxt: Text;
         ErrorTxt: Text;
         ErrorResultLbl: Label 'USPS returned an error: %1', Comment = '%1 is the error text';
     begin
@@ -129,7 +120,7 @@ codeunit 50100 "USPS Management"
             Result.WriteTo(ErrorTxt);
             error('USPS did not return a value address. (but no error was shown, Debug informatoin: %1', ErrorTxt);
         end;
-        CompareRec."USPS FirmName" := GetField(Result, 'AddressValidateResponse/Address[1]/FirmName');
+        CompareRec."USPS FirmName" := copystr(GetField(Result, 'AddressValidateResponse/Address[1]/FirmName'), 1, maxstrlen(CompareRec."USPS FirmName"));
         CompareRec."USPS Address 1" := GetField(Result, 'AddressValidateResponse/Address[1]/Address1');
         CompareRec."USPS Address 2" := GetField(Result, 'AddressValidateResponse/Address[1]/Address2');
         CompareRec."USPS Business" := GetFieldBool(Result, 'AddressValidateResponse/Address[1]/Business');
@@ -141,7 +132,6 @@ codeunit 50100 "USPS Management"
 
     local procedure GetFieldBool(var Xml: XmlDocument; Path: Text): Boolean;
     var
-        v: Variant;
         N: XmlNode;
         b: Boolean;
     begin
@@ -153,7 +143,6 @@ codeunit 50100 "USPS Management"
 
     local procedure GetField(var Xml: XmlDocument; Path: Text): Text;
     var
-        v: Variant;
         N: XmlNode;
     begin
         if Xml.SelectSingleNode(Path, N) then
@@ -171,7 +160,7 @@ codeunit 50100 "USPS Management"
 
     local procedure CallWebService(API: Text; XMLin: XmlDocument): XmlDocument
     var
-        Setup: Record "USPS Setup";
+        Setup: Record "USPS Setup Hgd";
         TypeHelper: Codeunit "Type Helper";
         Client: HttpClient;
         Request: HttpRequestMessage;
