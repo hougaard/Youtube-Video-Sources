@@ -1,33 +1,12 @@
 codeunit 50100 "USPS Management Hgd"
 {
     procedure ApplyAddress(CompareRec: Record "USPS Address Verify Hgd")
-    var
-        Customer: Record Customer;
-        Vendor: Record Vendor;
     begin
         case CompareRec.Type of
             CompareRec.Type::Customer:
-                begin
-                    Customer.GET(CompareRec."No.");
-                    Customer.Validate(Name, CompareRec."USPS FirmName");
-                    Customer.Validate(Address, CompareRec."USPS Address 1");
-                    Customer.Validate("Address 2", CompareRec."USPS Address 2");
-                    Customer.Validate(City, CompareREc."USPS City");
-                    Customer.Validate("Post Code", CompareRec."USPS Zip5");
-                    Customer.Validate(County, CompareRec."USPS State");
-                    Customer.Modify(true);
-                end;
+                ApplyToCustomerRec(CompareRec);
             CompareRec.Type::Vendor:
-                begin
-                    Vendor.GET(CompareRec."No.");
-                    Vendor.Validate(Name, CompareRec."USPS FirmName");
-                    Vendor.VAlidate(Address, CompareRec."USPS Address 1");
-                    Vendor.VAlidate("Address 2", CompareRec."USPS Address 2");
-                    Vendor.Validate(City, CompareREc."USPS City");
-                    Vendor.Validate("Post Code", CompareRec."USPS Zip5");
-                    Vendor.Validate(County, CompareRec."USPS State");
-                    Vendor.Modify(true);
-                end;
+                ApplyToVendorRec(CompareRec);
         end;
     end;
 
@@ -51,8 +30,9 @@ codeunit 50100 "USPS Management Hgd"
         CompareRec.City := Vendor.City;
         CompareRec.County := Vendor.County;
         CompareRec."Post Code" := Vendor."Post Code";
+        OnAfterApplyingVendorToAddressVerify(CompareRec, Vendor);
 
-        PrepareXML(CompareRec, Setup);
+        VerifyAddressWithUSPS(CompareRec, Setup);
 
         CompareRec.Modify();
         Commit();
@@ -79,55 +59,23 @@ codeunit 50100 "USPS Management Hgd"
         CompareRec.City := Customer.City;
         CompareRec.County := Customer.County;
         CompareRec."Post Code" := Customer."Post Code";
+        OnAfterApplyingCustomerToAddressVerify(CompareRec, Customer);
 
-        PrepareXML(CompareRec, Setup);
+        VerifyAddressWithUSPS(CompareRec, Setup);
 
         CompareRec.Modify();
         Commit();
         Page.run(50101, CompareRec);
     end;
 
-    local procedure PrepareXML(var CompareRec: Record "USPS Address Verify Hgd"; var Setup: Record "USPS Setup Hgd")
+    procedure VerifyAddressWithUSPS(var CompareRec: Record "USPS Address Verify Hgd"; var Setup: Record "USPS Setup Hgd")
     var
         Parameters: XmlDocument;
         Result: XmlDocument;
-        Address: XmlElement;
-        AVR: XmlElement;
-        ErrorTxt: Text;
-        ErrorResultLbl: Label 'USPS returned an error: %1', Comment = '%1 is the error text';
     begin
-        Parameters := XmlDocument.Create();
-        Address := XmlElement.Create('Address');
-        Address.Attributes().Set('ID', '0');
-        Address.Add(AddField('FirmName', CompareRec.Name));
-        Address.Add(AddField('Address1', CompareRec."Address 1"));
-        Address.Add(AddField('Address2', CompareRec."Address 2"));
-        Address.Add(AddField('City', CompareRec.City));
-        Address.Add(AddField('State', CompareRec.County));
-        Address.Add(AddField('Zip5', CompareRec."Post Code"));
-        Address.Add(AddField('Zip4', '')); // TODO: Split and Fix!
-        AVR := XmlElement.Create('AddressValidateRequest');
-        AVR.Attributes().Set('USERID', Setup.UserID);
-        AVR.Add(Address);
-        Parameters.Add(AVR);
-
+        PrepareXML(CompareRec, Setup, Parameters);
         Result := CallWebService('Verify', Parameters);
-
-        if GetField(Result, 'AddressValidateResponse/Address[1]/Error/Description') <> '' then
-            error(ErrorResultLbl, GetField(Result, 'AddressValidateResponse/Address[1]/Error/Description'));
-
-        if GetField(Result, 'AddressValidateResponse/Address[1]/Address1') = '' then begin
-            Result.WriteTo(ErrorTxt);
-            error('USPS did not return a value address. (but no error was shown, Debug informatoin: %1', ErrorTxt);
-        end;
-        CompareRec."USPS FirmName" := copystr(GetField(Result, 'AddressValidateResponse/Address[1]/FirmName'), 1, maxstrlen(CompareRec."USPS FirmName"));
-        CompareRec."USPS Address 1" := GetField(Result, 'AddressValidateResponse/Address[1]/Address1');
-        CompareRec."USPS Address 2" := GetField(Result, 'AddressValidateResponse/Address[1]/Address2');
-        CompareRec."USPS Business" := GetFieldBool(Result, 'AddressValidateResponse/Address[1]/Business');
-        CompareRec."USPS City" := GetField(Result, 'AddressValidateResponse/Address[1]/City');
-        CompareRec."USPS State" := GetField(Result, 'AddressValidateResponse/Address[1]/State');
-        CompareRec."USPS Zip5" := GetField(Result, 'AddressValidateResponse/Address[1]/Zip5');
-        CompareRec."USPS Zip4" := GetField(Result, 'AddressValidateResponse/Address[1]/Zip4');
+        ProcessResult(CompareRec, Result);
     end;
 
     local procedure GetFieldBool(var Xml: XmlDocument; Path: Text): Boolean;
@@ -193,5 +141,110 @@ codeunit 50100 "USPS Management Hgd"
             error('Cannot contact USPS, connection error!');
     end;
 
+    local procedure ApplyToCustomerRec(CompareRec: Record "USPS Address Verify Hgd")
+    var
+        Customer: Record Customer;
+    begin
+        Customer.GET(CompareRec."No.");
+        Customer.Validate(Name, CompareRec."USPS FirmName");
+        Customer.Validate(Address, CompareRec."USPS Address 1");
+        Customer.Validate("Address 2", CompareRec."USPS Address 2");
+        Customer.Validate(City, CompareREc."USPS City");
+        Customer.Validate("Post Code", CompareRec."USPS Zip5");
+        Customer.Validate(County, CompareRec."USPS State");
+        OnBeforeModifyCustomer(Customer, CompareRec);
+        Customer.Modify(true);
+    end;
 
+    local procedure ApplyToVendorRec(CompareRec: Record "USPS Address Verify Hgd")
+    var
+        Vendor: Record Vendor;
+    begin
+        Vendor.GET(CompareRec."No.");
+        Vendor.Validate(Name, CompareRec."USPS FirmName");
+        Vendor.VAlidate(Address, CompareRec."USPS Address 1");
+        Vendor.VAlidate("Address 2", CompareRec."USPS Address 2");
+        Vendor.Validate(City, CompareREc."USPS City");
+        Vendor.Validate("Post Code", CompareRec."USPS Zip5");
+        Vendor.Validate(County, CompareRec."USPS State");
+        OnBeforeModifyVendor(Vendor, CompareRec);
+        Vendor.Modify(true);
+    end;
+
+    local procedure PrepareXML(CompareRec: Record "USPS Address Verify Hgd"; Setup: Record "USPS Setup Hgd"; var Parameters: XmlDocument)
+    var
+        Address: XmlElement;
+        AVR: XmlElement;
+    begin
+        Parameters := XmlDocument.Create();
+        Address := XmlElement.Create('Address');
+        Address.Attributes().Set('ID', '0');
+        Address.Add(AddField('FirmName', CompareRec.Name));
+        Address.Add(AddField('Address1', CompareRec."Address 1"));
+        Address.Add(AddField('Address2', CompareRec."Address 2"));
+        Address.Add(AddField('City', CompareRec.City));
+        Address.Add(AddField('State', CompareRec.County));
+        Address.Add(AddField('Zip5', CompareRec."Post Code"));
+        Address.Add(AddField('Zip4', '')); // TODO: Split and Fix!
+        OnAfterAddingFieldsToXML(Address, CompareRec);
+        AVR := XmlElement.Create('AddressValidateRequest');
+        AVR.Attributes().Set('USERID', Setup.UserID);
+        AVR.Add(Address);
+        Parameters.Add(AVR);
+    end;
+
+    local procedure ProcessResult(var CompareRec: Record "USPS Address Verify Hgd"; var Result: XmlDocument)
+    var
+        ErrorTxt: Text;
+        ErrorResultLbl: Label 'USPS returned an error: %1', Comment = '%1 is the error text';
+    begin
+        if GetField(Result, 'AddressValidateResponse/Address[1]/Error/Description') <> '' then
+            error(ErrorResultLbl, GetField(Result, 'AddressValidateResponse/Address[1]/Error/Description'));
+
+        if GetField(Result, 'AddressValidateResponse/Address[1]/Address1') = '' then begin
+            Result.WriteTo(ErrorTxt);
+            error('USPS did not return a value address. (but no error was shown, Debug informatoin: %1', ErrorTxt);
+        end;
+        CompareRec."USPS FirmName" := copystr(GetField(Result, 'AddressValidateResponse/Address[1]/FirmName'), 1, maxstrlen(CompareRec."USPS FirmName"));
+        CompareRec."USPS Address 1" := copystr(GetField(Result, 'AddressValidateResponse/Address[1]/Address1'), 1, maxstrlen(CompareRec."USPS Address 1"));
+        CompareRec."USPS Address 2" := copystr(GetField(Result, 'AddressValidateResponse/Address[1]/Address2'), 1, maxstrlen(CompareRec."Address 2"));
+        CompareRec."USPS Business" := GetFieldBool(Result, 'AddressValidateResponse/Address[1]/Business');
+        CompareRec."USPS City" := copystr(GetField(Result, 'AddressValidateResponse/Address[1]/City'), 1, maxstrlen(CompareRec."USPS City"));
+        CompareRec."USPS State" := copystr(GetField(Result, 'AddressValidateResponse/Address[1]/State'), 1, maxstrlen(CompareRec."USPS State"));
+        CompareRec."USPS Zip5" := copystr(GetField(Result, 'AddressValidateResponse/Address[1]/Zip5'), 1, maxstrlen(CompareRec."USPS Zip5"));
+        CompareRec."USPS Zip4" := copystr(GetField(Result, 'AddressValidateResponse/Address[1]/Zip4'), 1, maxstrlen(CompareRec."USPS Zip4"));
+        OnAfterGettingDataFromUSPS(CompareRec, Result);
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterApplyingVendorToAddressVerify(var AddresVerify: Record "USPS Address Verify Hgd";
+                                                         var Vendor: Record Vendor)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterApplyingCustomerToAddressVerify(var AddresVerify: Record "USPS Address Verify Hgd";
+                                                         var Customer: Record Customer)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeModifyCustomer(var Customer: Record Customer; var USPSAddressVerify: Record "USPS Address Verify Hgd")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeModifyVendor(var Vendor: Record Vendor; var USPSAddressVerify: Record "USPS Address Verify Hgd")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterAddingFieldsToXML(var Address: XmlElement; var CompareRec: Record "USPS Address Verify Hgd")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterGettingDataFromUSPS(var CompareRec: Record "USPS Address Verify Hgd"; var Result: XmlDocument)
+    begin
+    end;
 }

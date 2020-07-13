@@ -1,6 +1,6 @@
 {
-  "id": "7246eb83-aec7-4f7f-8aa1-b77b6c3b2882",
-  "name": "Video15",
+  "id": "31a3ccc4-d216-40e6-976c-b302c8bed636",
+  "name": "Video18",
   "publisher": "Default publisher",
   "version": "1.0.0.0",
   "brief": "",
@@ -28,12 +28,11 @@
   "platform": "16.0.0.0",
   "idRanges": [
     {
-      "from": 50710,
-      "to": 50749
+      "from": 50100,
+      "to": 50149
     }
   ],
-  "target": "OnPrem",
-  "contextSensitiveHelpUrl": "https://Video15.com/help/",
+  "contextSensitiveHelpUrl": "https://Video18.com/help/",
   "showMyCode": true,
   "runtime": "5.0"
 }

@@ -15,30 +15,37 @@ page 50101 "USPS Verify Address Hgd"
             {
                 field("No."; "No.")
                 {
+                    ToolTip = 'No.';
                     ApplicationArea = All;
                 }
                 field(Name; Name)
                 {
+                    ToolTip = 'Name';
                     ApplicationArea = All;
                 }
                 field("Address 1"; "Address 1")
                 {
+                    ToolTip = 'Address 1';
                     ApplicationArea = All;
                 }
                 field("Address 2"; "Address 2")
                 {
+                    ToolTip = 'Address 2';
                     ApplicationArea = All;
                 }
                 field(City; City)
                 {
+                    ToolTip = 'City';
                     ApplicationArea = All;
                 }
                 field("Post Code"; "Post Code")
                 {
+                    ToolTip = 'Post Code';
                     ApplicationArea = All;
                 }
                 field(County; County)
                 {
+                    ToolTip = 'State/county';
                     ApplicationArea = All;
                 }
             }
@@ -46,26 +53,32 @@ page 50101 "USPS Verify Address Hgd"
             {
                 field("USPS FirmName"; "USPS FirmName")
                 {
+                    ToolTip = 'USPS Firm Name';
                     ApplicationArea = All;
                 }
                 field("USPS Address 1"; "USPS Address 1")
                 {
+                    ToolTip = 'USPS Address 1';
                     ApplicationArea = All;
                 }
                 field("USPS Address 2"; "USPS Address 2")
                 {
+                    ToolTip = 'USPS Address 2';
                     ApplicationArea = All;
                 }
                 field("USPS City"; "USPS City")
                 {
+                    ToolTip = 'USPS City';
                     ApplicationArea = All;
                 }
                 field("USPS Zip5"; "USPS Zip5")
                 {
+                    ToolTip = 'USPS Zip5';
                     ApplicationArea = All;
                 }
                 field("USPS State"; "USPS State")
                 {
+                    ToolTip = 'USPS State';
                     ApplicationArea = All;
                 }
             }

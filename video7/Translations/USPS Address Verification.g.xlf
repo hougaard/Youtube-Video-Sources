@@ -118,15 +118,90 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page USPS Setup Hgd - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Codeunit 78036087 - Method 3823650588 - NamedType 2401856469" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 123192883 - Control 3003898253 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>URL for USPS Web service (usually https://secure.shippingapis.com/ShippingAPI.dll)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Setup Hgd - Control URL - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 123192883 - Control 2138558048 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>UserID from USPS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Setup Hgd - Control UserID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 78036087 - Method 1354513478 - NamedType 2401856469" size-unit="char" translate="yes" xml:space="preserve">
           <source>USPS returned an error: %1</source>
           <note from="Developer" annotates="general" priority="2">%1 is the error text</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit USPS Management Hgd - Method PrepareXML - NamedType ErrorResultLbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit USPS Management Hgd - Method ProcessResult - NamedType ErrorResultLbl</note>
         </trans-unit>
         <trans-unit id="Page 3717113017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>USPS Verify Address</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page USPS Verify Address Hgd - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3717113017 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Verify Address Hgd - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3717113017 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Verify Address Hgd - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3717113017 - Control 2944548617 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address 1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Verify Address Hgd - Control Address 1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3717113017 - Control 2306852000 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Verify Address Hgd - Control Address 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3717113017 - Control 714791889 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Verify Address Hgd - Control City - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3717113017 - Control 3660300303 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Verify Address Hgd - Control Post Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3717113017 - Control 499448942 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>State/county</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Verify Address Hgd - Control County - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3717113017 - Control 816226998 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>USPS Firm Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Verify Address Hgd - Control USPS FirmName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3717113017 - Control 3023194358 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>USPS Address 1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Verify Address Hgd - Control USPS Address 1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3717113017 - Control 1110104507 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>USPS Address 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Verify Address Hgd - Control USPS Address 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3717113017 - Control 2395774886 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>USPS City</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Verify Address Hgd - Control USPS City - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3717113017 - Control 1647114325 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>USPS Zip5</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Verify Address Hgd - Control USPS Zip5 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3717113017 - Control 2587385486 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>USPS State</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page USPS Verify Address Hgd - Control USPS State - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3717113017 - Action 1068937304 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Apply USPS Address</source>
@@ -163,10 +238,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VendorListExt Hgd - Action Verify Hgd - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3772264112 - Action 3343859568 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4194195770">
+          <source>Verify address with USPS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VendorListExt Hgd - Action Verify Hgd - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 633172902 - Action 3343859568 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
           <source>Verify Address</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension VendorCardExt Hgd - Action Verify Hgd - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 633172902 - Action 3343859568 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
+          <source>Verify address with USPS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension VendorCardExt Hgd - Action Verify Hgd - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Enum 841422531 - EnumValue 1994964448 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer</source>

@@ -15,10 +15,12 @@ page 50100 "USPS Setup Hgd"
             {
                 field(URL; URL)
                 {
+                    ToolTip = 'URL for USPS Web service (usually https://secure.shippingapis.com/ShippingAPI.dll)';
                     ApplicationArea = All;
                 }
                 field(UserID; UserID)
                 {
+                    ToolTip = 'UserID from USPS';
                     ApplicationArea = All;
                     ExtendedDatatype = Masked;
                 }
@@ -27,7 +29,9 @@ page 50100 "USPS Setup Hgd"
     }
     trigger OnOpenPage()
     begin
-        if IsEmpty() then
+        if IsEmpty() then begin
+            URL := 'https://secure.shippingapis.com/ShippingAPI.dll';
             Insert(true);
+        end;
     end;
 }

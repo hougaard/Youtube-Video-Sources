@@ -7,6 +7,7 @@ pageextension 50102 "VendorListExt Hgd" extends "Vendor List"
             action("Verify Hgd")
             {
                 Caption = 'Verify Address';
+                ToolTip = 'Verify address with USPS';
                 Image = Addresses;
                 ApplicationArea = All;
                 trigger OnAction()
@@ -28,6 +29,7 @@ pageextension 50103 "VendorCardExt Hgd" extends "Vendor Card"
             action("Verify Hgd")
             {
                 Caption = 'Verify Address';
+                ToolTip = 'Verify address with USPS';
                 Image = Addresses;
                 ApplicationArea = All;
                 trigger OnAction()

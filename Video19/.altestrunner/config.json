@@ -1,0 +1,13 @@
+{
+    "containerResultPath":  "C:\\ProgramData\\NavContainerHelper",
+    "launchConfigName":  "Your own server",
+    "securePassword":  "01000000d08c9ddf0115d1118c7a00c04fc297eb0100000040d0805fade3074b8235351275e95ae600000000020000000000106600000001000020000000bf84a053798304475bb539032772ac30f6f5e778ebad0d0b2f47d293bad556ab000000000e8000000002000020000000096b9be20109b39bbecc966ec1d63ad0107fa28e78b21744f9e2036ae9126b7610000000ae70e9e5879e6405d2c125f692ff543b4000000003e3f9cb1390e39c524cc676fbe1e24255b5f2d0c23acbe473c7d3511c58ee77e81a67fdd821d84850b7926e906c1ae81a5d47f2cb802d675489cb7c314c3c70",
+    "userName":  "eh",
+    "companyName":  "CRONUS Canada, Inc.",
+    "testSuiteName":  "",
+    "vmUserName":  "",
+    "vmSecurePassword":  "",
+    "remoteContainerName":  "",
+    "dockerHost":  "",
+    "newPSSessionOptions":  ""
+}
