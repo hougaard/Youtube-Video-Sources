@@ -9,6 +9,7 @@ codeunit 51100 "Search Management"
         LastResult: Integer;
         OnlyONeFieldPrimaryKeyErr: Label 'Primary key search is only supported on tables with 1 field in the key.';
     begin
+        Result.Deleteall();
         if SearchSetup.findset() then
             repeat
                 Ref.OPEN(SearchSetup."Table No.");
@@ -23,7 +24,7 @@ codeunit 51100 "Search Management"
                         Result.INIT();
                         Result."Line No." := LastResult;
                         Result."Table No." := SearchSetup."Table No.";
-                        Result."Data Caption" := CopyStr(format(Ref).Replace(',', ' '), 1, maxstrlen(Result."Data Caption"));
+                        Result."Data Caption" := CopyStr(DataCaption(Ref), 1, maxstrlen(Result."Data Caption"));
                         Result."Record ID" := Ref.RecordId;
                         Result.Insert();
                     end;
@@ -31,6 +32,52 @@ codeunit 51100 "Search Management"
 
                 Ref.Close();
             until SearchSetup.Next() = 0;
+    end;
+
+    procedure DataCaption(Ref: RecordRef): Text
+    var
+        i: Integer;
+        Fref: FieldRef;
+        Result: Text;
+        UsedFields: Dictionary of [Integer, Text];
+        UsedFieldTypes: Dictionary of [Text, Text];
+    begin
+        for i := 1 to Ref.KeyIndex(1).FieldCount() do begin
+            Fref := Ref.FieldIndex(i);
+            UsedFields.Add(Fref.Number(), Fref.Name());
+            if not UsedFieldTypes.ContainsKey(format(Fref.Type())) then
+                UsedFieldTypes.Add(Format(Fref.Type()), format(Fref.Type()));
+            if Result <> '' then
+                result += ' ' + format(FRef.Value())
+            else
+                Result += format(Fref.Value());
+        end;
+
+        for i := 1 to Ref.FieldCount() do begin
+            Fref := Ref.FieldIndex(i);
+            if not UsedFields.ContainsKey(Fref.Number()) then begin
+                case Fref.Type of
+                    FieldType::Text:
+                        begin
+                            if Result <> '' then
+                                result += ' ' + format(FRef.Value())
+                            else
+                                Result += format(Fref.Value());
+                        end;
+                    else begin
+                            if not UsedFieldTypes.ContainsKey(format(Fref.Type())) then begin
+                                if Result <> '' then
+                                    result += ' ' + format(FRef.Value())
+                                else
+                                    Result += format(Fref.Value());
+                                UsedFieldTypes.Add(Format(Fref.Type()), format(Fref.Type()));
+                            end;
+                        end;
+                end;
+            end;
+        end;
+
+        exit(Result);
     end;
 
     procedure NavigateTo(Rec: Record "Search Result")
