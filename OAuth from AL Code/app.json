@@ -1,0 +1,19 @@
+{
+  "id": "c24c8b76-1ae7-4b5f-8ef7-d71571e90f8f",
+  "name": "BCOauth2",
+  "publisher": "Erik Hougaard",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "showMyCode": true,
+  "runtime": "2.0"
+}

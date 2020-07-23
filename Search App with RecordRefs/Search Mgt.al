@@ -9,6 +9,7 @@ codeunit 51100 "Search Management"
         LastResult: Integer;
         OnlyONeFieldPrimaryKeyErr: Label 'Primary key search is only supported on tables with 1 field in the key.';
     begin
+        Test();
         Result.Deleteall();
         if SearchSetup.findset() then
             repeat
@@ -92,5 +93,16 @@ codeunit 51100 "Search Management"
         Ref.Get(Rec."Record ID");
         RefVari := Ref;
         Page.run(Setup."Card Page", RefVari);
+    end;
+
+    procedure Test()
+    var
+        Customer: Record Customer;
+        date: Date;
+        i: Integer;
+    begin
+        date := TODAY();
+        Customer.FindFirst();
+        Message('The maxstrlen of the customer is %1', MaxStrLen(date));
     end;
 }
