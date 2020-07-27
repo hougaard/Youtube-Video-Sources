@@ -1,0 +1,38 @@
+{
+  "id": "4a9ea10f-8fe0-4c63-83e5-8bc4f5b90a30",
+  "name": "Wysiwyg",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+      "publisher": "Microsoft",
+      "name": "System Application",
+      "version": "16.0.0.0"
+    },
+    {
+      "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+      "publisher": "Microsoft",
+      "name": "Base Application",
+      "version": "16.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "platform": "16.0.0.0",
+  "idRanges": [
+    {
+      "from": 52100,
+      "to": 52149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://Wysiwyg.com/help/",
+  "showMyCode": true,
+  "runtime": "5.0"
+}
