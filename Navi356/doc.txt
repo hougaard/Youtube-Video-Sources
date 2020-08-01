@@ -1,0 +1,85 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                                                                                ³
+³ Post-proc.code 130                         Last modified on: 14-09-93 12.10.14 ³
+³ UK3                                                                            ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ External Var.                                                                  ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+                                                                          
+  U Name                 Type         File            Len Dim1 Dim2 Dim3  
+  Ä ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ ÄÄÄÄÄÄÄÄÄÄÄÄ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ ÄÄÄ ÄÄÄÄ ÄÄÄÄ ÄÄÄÄ  
+    Prod.Gr              Record       Prod.Gr
+    xProd.Gr             Record       Prod.Gr
+    CursorPos            Integer
+    FieldNo.             Integer
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ Internal Var.                                                                  ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+                                                                          
+  U Name                 Type         File            Len Dim1 Dim2 Dim3  
+  Ä ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ ÄÄÄÄÄÄÄÄÄÄÄÄ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ ÄÄÄ ÄÄÄÄ ÄÄÄÄ ÄÄÄÄ  
+    ProdGr2              Record       Prod.Gr
+    ProdGrEntry          Record       Prod.Gr Entry
+    CommLine             Record       File Comment
+    PurchaseLine         Record       Purchase Line
+    SalesLine            Record       Sales Line
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ Description                                                                    ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ DELETE                                                                Prod.Gr  ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+dbLOCKFILE(ProdGrEntry);
+
+dbCALCFIELDS("Stock(CPrice)");
+dbTESTFIELD("Stock(CPrice)",0);
+
+dbSELECTKEY(ProdGrEntry."Prod.Gr No.");
+dbSETRANGE(ProdGrEntry."Prod.Gr No.","No.");
+dbMODIFYALL(ProdGrEntry."Prod.Gr No.",'');
+
+dbSETRANGE(CommLine.File,6);
+dbSETRANGE(CommLine."No.","No.");
+dbDELALL(CommLine);
+
+dbSELECTKEY(PurchaseLine."Voucher Type",PurchaseLine.Type,PurchaseLine."No.",PurchaseLine."Deliv.Date");
+dbSETRANGE(PurchaseLine."Voucher Type",1);
+dbSETRANGE(PurchaseLine.Type,4);
+dbSETRANGE(PurchaseLine."No.","No.");
+IF dbFINDREC(PurchaseLine,'-') THEN
+  ERROR('There are purchase orders for product group %1',"No.");
+
+dbSELECTKEY(SalesLine."Voucher Type",SalesLine.Type,SalesLine."No.",SalesLine."Deliv.Date");
+dbSETRANGE(SalesLine."Voucher Type",1);
+dbSETRANGE(SalesLine.Type,4);
+dbSETRANGE(SalesLine."No.","No.");
+IF dbFINDREC(SalesLine,'-') THEN
+  ERROR('There are sales orders for product group %1',"No.");
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ SAVE                                                                  Prod.Gr  ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+"Edited on" := TODAY;
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ Name                                                                  Prod.Gr  ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+IF (1 < CursorPos) AND (CursorPos < MAXSTRLEN("Search Name")) THEN BEGIN
+  "Search Name" := DELCHR(COPYSTR(Name,CursorPos),'<>');
+  "Search Name" := SETSTRLEN("Search Name" + ' ' + DELCHR(COPYSTR(Name,1,CursorPos-1),'<>'),MAXSTRLEN("Search Name"));
+END ELSE
+  "Search Name" := Name;
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ Superior Prod. Gr                                                     Prod.Gr  ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+IF ("Superior Prod. Gr" <> '') THEN BEGIN
+  dbGETREC(ProdGr2,"Superior Prod. Gr");
+  "Booking Group" := ProdGr2."Booking Group";
+END;
+
