@@ -25,6 +25,10 @@ page 51100 "Search Tables"
                 {
                     ApplicationArea = All;
                 }
+                field("Full Text Search Limit"; "Full Text Search Limit")
+                {
+                    ApplicationArea = All;
+                }
                 field("Card Page"; "Card Page")
                 {
                     ApplicationArea = All;

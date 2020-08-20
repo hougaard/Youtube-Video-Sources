@@ -21,6 +21,11 @@ table 51100 "Search Setup"
             Caption = 'Full Text Search';
             DataClassification = SystemMetadata;
         }
+        field(21; "Full Text Search Limit"; Integer)
+        {
+            Caption = 'Full Text Search Limit';
+            DataClassification = SystemMetadata;
+        }
         field(50; "Card Page"; Integer)
         {
             Caption = 'Card Page No.';

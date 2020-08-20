@@ -4,12 +4,14 @@ codeunit 51100 "Search Management"
     var
         SearchSetup: Record "Search Setup";
         Ref: RecordRef;
+        FullRef: RecordRef;
         KRef: KeyRef;
         FRef: FieldRef;
+        LowerSearchTerm: Text;
         LastResult: Integer;
+        FullCounter: Integer;
         OnlyONeFieldPrimaryKeyErr: Label 'Primary key search is only supported on tables with 1 field in the key.';
     begin
-        Test();
         Result.Deleteall();
         if SearchSetup.findset() then
             repeat
@@ -28,7 +30,27 @@ codeunit 51100 "Search Management"
                         Result."Data Caption" := CopyStr(DataCaption(Ref), 1, maxstrlen(Result."Data Caption"));
                         Result."Record ID" := Ref.RecordId;
                         Result.Insert();
-                    end;
+                    end else
+                        if SearchSetup."Full Text Search" then begin
+                            FullRef.OPEN(SearchSetup."Table No.");
+                            LowerSearchTerm := SearchTerm.ToLower();
+                            FullCounter := 0;
+                            if FullRef.FindSet(false, false) then
+                                repeat
+                                    if format(FullRef).ToLower().Contains(LowerSearchTerm) then begin
+                                        LastResult += 1;
+                                        Result.INIT();
+                                        Result."Line No." := LastResult;
+                                        Result."Table No." := SearchSetup."Table No.";
+                                        Result."Data Caption" := CopyStr(DataCaption(FullRef), 1, maxstrlen(Result."Data Caption"));
+                                        Result."Record ID" := FullRef.RecordId;
+                                        Result.Insert();
+                                        FullCounter += 1;
+                                    end;
+                                until (FullRef.Next() = 0) or (FullCounter = SearchSetup."Full Text Search Limit");
+                            FullRef.Close();
+                        end;
+
                 end;
 
                 Ref.Close();
@@ -93,16 +115,5 @@ codeunit 51100 "Search Management"
         Ref.Get(Rec."Record ID");
         RefVari := Ref;
         Page.run(Setup."Card Page", RefVari);
-    end;
-
-    procedure Test()
-    var
-        Customer: Record Customer;
-        date: Date;
-        i: Integer;
-    begin
-        date := TODAY();
-        Customer.FindFirst();
-        Message('The maxstrlen of the customer is %1', MaxStrLen(date));
     end;
 }

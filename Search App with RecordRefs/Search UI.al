@@ -8,7 +8,7 @@ page 51101 "Search"
     SourceTableTemporary = true;
     Editable = true;
     InsertAllowed = false;
-    ModifyAllowed = false;
+    //ModifyAllowed = false;
     DeleteAllowed = false;
 
     layout
