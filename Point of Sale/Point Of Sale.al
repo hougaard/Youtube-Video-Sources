@@ -153,6 +153,7 @@ page 57100 "Point of sale"
             else
                 NextNo := 10000;
             SL.Reset();
+            SL.Init();
             SL."Document type" := Rec."Document Type";
             SL."Document No." := Rec."No.";
             Sl."Line No." := NextNo;
