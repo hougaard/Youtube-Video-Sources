@@ -1,0 +1,26 @@
+{
+  "id": "d66beaae-a369-4d22-9beb-4d64c37be0e7",
+  "name": "ALTris",
+  "publisher": "SIMTEQ A/S",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "A Tetris game for Microsoft Dynamics 365 Busines Central written in AL",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "https://www.simteq.com",
+  "logo": "ALTris app logo.png",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "14.0.0.0",
+  "application": "14.10.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50100
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://www.dabbler.dk",
+  "showMyCode": true,
+  "runtime": "3.2"
+}
