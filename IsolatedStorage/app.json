@@ -1,0 +1,38 @@
+{
+  "id": "f7093406-761b-4e47-93ef-53ca81f14d1f",
+  "name": "IsolatedStorage",
+  "publisher": "Hougaard.com",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+      "publisher": "Microsoft",
+      "name": "System Application",
+      "version": "16.0.0.0"
+    },
+    {
+      "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+      "publisher": "Microsoft",
+      "name": "Base Application",
+      "version": "16.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "platform": "16.0.0.0",
+  "idRanges": [
+    {
+      "from": 59300,
+      "to": 59349
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://IsolatedStorage.com/help/",
+  "showMyCode": true,
+  "runtime": "5.0"
+}
