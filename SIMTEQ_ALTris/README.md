@@ -9,14 +9,14 @@ gl@simteq.com
 +45 3124 2879
 
 # Inspiration for timers, controls and sound:
-https://www.hougaard.com/blast-from-the-past-first-game-in-financials/
-https://www.hougaard.com/video-add-dynamically-html-rendering-to-business-central/
-http://www.peterzentner.com/2018/07/19/dynamics-365-business-central-how-to-use-timers-in-al/
-https://www.w3schools.com/jsref/event_onkeydown.asp
-https://odino.org/emit-a-beeping-sound-with-javascript/
+* https://www.hougaard.com/blast-from-the-past-first-game-in-financials/
+* https://www.hougaard.com/video-add-dynamically-html-rendering-to-business-central/
+* http://www.peterzentner.com/2018/07/19/dynamics-365-business-central-how-to-use-timers-in-al/
+* https://www.w3schools.com/jsref/event_onkeydown.asp
+* https://odino.org/emit-a-beeping-sound-with-javascript/
 
 # Design goals:
 - As few objects as possible (easy installation / renumbering)
   (I'm aware this is not the right way <tm>. This is NOT for developer training :-) )
-- AL logic, minimizing CSS/HTML/JavaScript (after all the challange is doing this in AL)
+- AL logic, minimizing CSS/HTML/JavaScript (after all the challenge is doing this in AL)
 - Playable

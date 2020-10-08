@@ -1,0 +1,26 @@
+{
+  "id": "2de05a2c-eb2b-48f6-8472-c9967983bddf",
+  "name": "Blob Storage",
+  "publisher": "Hougaard.com",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "16.0.0.0",
+  "application": "16.0.0.0",
+  "idRanges": [
+    {
+      "from": 59100,
+      "to": 59149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://BlobStorage.com/help/",
+  "showMyCode": true,
+  "runtime": "5.0"
+}

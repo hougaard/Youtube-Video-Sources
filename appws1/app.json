@@ -1,0 +1,33 @@
+{
+  "id": "e57afeec-e479-4d61-b852-bbd0f763e8ad",
+  "name": "Demo from Workshop 1",
+  "publisher": "Erik",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "appId": "a6be809b-2c03-4c1c-b717-49a1a0b6f0ab",
+      "name": "Whats New in v17 Dev",
+      "publisher": "Default publisher",
+      "version": "1.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 56100,
+      "to": 56149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://appws1.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "a6be809b-2c03-4c1c-b717-49a1a0b6f0ab",
+  "name": "Whats New in v17 Dev",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://WhatsNewinv17Dev.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}

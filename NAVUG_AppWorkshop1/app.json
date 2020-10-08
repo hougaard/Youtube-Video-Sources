@@ -1,0 +1,26 @@
+{
+  "id": "97a2cd1f-8170-4e97-a6d3-64fcfbad095a",
+  "name": "NAVUG_AppWorkshop1",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://NAVUG_AppWorkshop1.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}

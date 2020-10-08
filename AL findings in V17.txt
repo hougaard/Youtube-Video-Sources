@@ -1,0 +1,86 @@
+
+
+builder.Add("TABLETYPE", new EnumPropertyTypeInfo(PropertyKind.TableType, "TableType", "Enum", "EnumLiteral", delegate(ObjectParser p, PropertyTypeInfo pti, ref InternalSyntaxToken equals)
+				{
+					return p.ParseEnumLiteralPropertyValue(pti);
+				}, null, null, null, new EnumPropertyMemberInfo[]
+				{
+					new EnumPropertyMemberInfo("Normal", null, SymbolCompilationScope.Cloud, null, null, null),
+					new EnumPropertyMemberInfo("CRM", null, SymbolCompilationScope.Cloud, null, null, null),
+					new EnumPropertyMemberInfo("ExternalSQL", null, SymbolCompilationScope.OnPrem, null, null, null),
+					new EnumPropertyMemberInfo("Exchange", null, SymbolCompilationScope.OnPrem, null, null, null),
+					new EnumPropertyMemberInfo("MicrosoftGraph", null, SymbolCompilationScope.OnPrem, null, null, null),
+					new EnumPropertyMemberInfo("CDS", null, SymbolCompilationScope.Cloud, VersionCompatibility.Parse("5.0"), null, null),
+					new EnumPropertyMemberInfo("Temporary", null, SymbolCompilationScope.Cloud, VersionCompatibility.Parse("6.0"), null, null)
+				}, "Normal", false, true, null, null, null, null, null, null, true, false, "Table", null, null, null, true));
+
+
+
+app.json
+new KeyValuePair<string, ManifestPropertyTypeInfo>("PREPROCESSORSYMBOLS", new ManifestPropertyTypeInfo("PREPROCESSORSYMBOLS", null, VersionCompatibility.Parse("6.0"), null, null, false, true)),
+new KeyValuePair<string, ManifestPropertyTypeInfo>("KEYVAULTURLS", new ManifestPropertyTypeInfo("KEYVAULTURLS", null, VersionCompatibility.Parse("6.0"), null, null, false, true)),
+new KeyValuePair<string, ManifestPropertyTypeInfo>("SUPPRESSWARNINGS", new ManifestPropertyTypeInfo("SUPPRESSWARNINGS", null, VersionCompatibility.Parse("6.0"), null, null, false, true)),
+
+			
+				
+
+CommitBehavoir
+
+
+array[0] = new BuiltInMethodTypeSymbol(containingSymbol, "GetArchiveRecordRef", SymbolCompilationScope.DefinedByOwner, true, "ALNavApp", "ALNavAppGetArchiveRecordRef", false, false, false, false, NavCorLib.BooleanType, true, false, (Symbol method) => new ParameterSymbol[]
+			{
+				new BuiltInParameterSymbol(method, NavCorLib.IntegerType, "TableNo", 0, false, false, false, false, false, false, false, false, false, false),
+				new BuiltInParameterSymbol(method, NavCorLib.RecordRefType, "RecordRef", 1, true, false, false, false, false, false, false, false, false, false)
+			}, false, null, VersionCompatibility.Parse("6.0"), "The features related to data migration from V1 to V2 extensions are being deprecated.", false, false);
+			
+
+
+
+array[17] = new BuiltInMethodTypeSymbol(containingSymbol, "AddLoadFields", SymbolCompilationScope.DefinedByOwner, false, null, null, false, true, false, false, NavCorLib.BooleanType, true, false, (Symbol method) => new ParameterSymbol[]
+			{
+				new BuiltInParameterSymbol(method, NavCorLib.IntegerType, "Fields", 0, false, true, true, false, false, false, false, false, false, false)
+			}, false, VersionCompatibility.Parse("6.0"), null, null, false, false);
+			array[18] = new BuiltInMethodTypeSymbol(containingSymbol, "SetLoadFields", SymbolCompilationScope.DefinedByOwner, false, null, null, false, true, false, false, NavCorLib.BooleanType, true, false, (Symbol method) => new ParameterSymbol[]
+			{
+				new BuiltInParameterSymbol(method, NavCorLib.IntegerType, "Fields", 0, false, true, true, false, false, false, false, false, false, false)
+			}, false, VersionCompatibility.Parse("6.0"), null, null, false, false);
+			array[19] = new BuiltInMethodTypeSymbol(containingSymbol, "AreFieldsLoaded", SymbolCompilationScope.DefinedByOwner, false, null, null, false, true, false, false, NavCorLib.BooleanType, false, false, (Symbol method) => new ParameterSymbol[]
+			{
+				new BuiltInParameterSymbol(method, NavCorLib.IntegerType, "Fields", 0, false, false, true, false, false, false, false, false, false, false)
+			}, false, VersionCompatibility.Parse("6.0"), null, null, false, false);
+			array[20] = new BuiltInMethodTypeSymbol(containingSymbol, "LoadFields", SymbolCompilationScope.DefinedByOwner, false, null, null, false, true, false, false, NavCorLib.BooleanType, true, false, (Symbol method) => new ParameterSymbol[]
+			{
+				new BuiltInParameterSymbol(method, NavCorLib.IntegerType, "Fields", 0, false, false, true, false, false, false, false, false, false, false)
+			}, false, VersionCompatibility.Parse("6.0"), null, null, false, false);
+			
+
+array[68] = new BuiltInMethodTypeSymbol(containingSymbol, "SystemCreatedAtNo", SymbolCompilationScope.DefinedByOwner, false, null, null, true, false, false, false, NavCorLib.IntegerType, false, false, null, false, VersionCompatibility.Parse("6.0"), null, null, false, false);
+			array[69] = new BuiltInMethodTypeSymbol(containingSymbol, "SystemCreatedByNo", SymbolCompilationScope.DefinedByOwner, false, null, null, true, false, false, false, NavCorLib.IntegerType, false, false, null, false, VersionCompatibility.Parse("6.0"), null, null, false, false);
+			array[70] = new BuiltInMethodTypeSymbol(containingSymbol, "SystemModifiedAtNo", SymbolCompilationScope.DefinedByOwner, false, null, null, true, false, false, false, NavCorLib.IntegerType, false, false, null, false, VersionCompatibility.Parse("6.0"), null, null, false, false);
+			array[71] = new BuiltInMethodTypeSymbol(containingSymbol, "SystemModifiedByNo", SymbolCompilationScope.DefinedByOwner, false, null, null, true, false, false, false, NavCorLib.IntegerType, false, false, null, false, VersionCompatibility.Parse("6.0"), null, null, false, false);
+			
+
+array[17] = new BuiltInMethodTypeSymbol(containingSymbol, "SetDocumentServiceToken", SymbolCompilationScope.DefinedByOwner, true, "ALSession", "ALSetDocumentServiceToken", false, false, false, false, null, false, false, (Symbol method) => new ParameterSymbol[]
+			{
+				new BuiltInParameterSymbol(method, NavCorLib.StringType, "Token", 0, false, false, false, false, false, false, false, false, false, false)
+			}, false, VersionCompatibility.Parse("6.0"), null, null, false, false);
+
+
+array[15] = new BuiltInMethodTypeSymbol(containingSymbol, "AddLoadFields", SymbolCompilationScope.DefinedByOwner, false, null, null, false, true, false, false, NavCorLib.BooleanType, true, false, (Symbol method) => new ParameterSymbol[]
+			{
+				new BuiltInParameterSymbol(method, NavCorLib.JokerType, "Fields", 0, false, true, true, false, true, false, false, true, false, false)
+			}, false, VersionCompatibility.Parse("6.0"), null, null, false, false);
+			array[16] = new BuiltInMethodTypeSymbol(containingSymbol, "SetLoadFields", SymbolCompilationScope.DefinedByOwner, false, null, null, false, true, false, false, NavCorLib.BooleanType, true, false, (Symbol method) => new ParameterSymbol[]
+			{
+				new BuiltInParameterSymbol(method, NavCorLib.JokerType, "Fields", 0, false, true, true, false, true, false, false, true, false, false)
+			}, false, VersionCompatibility.Parse("6.0"), null, null, false, false);
+			array[17] = new BuiltInMethodTypeSymbol(containingSymbol, "AreFieldsLoaded", SymbolCompilationScope.DefinedByOwner, false, null, null, false, true, false, false, NavCorLib.BooleanType, false, false, (Symbol method) => new ParameterSymbol[]
+			{
+				new BuiltInParameterSymbol(method, NavCorLib.JokerType, "Fields", 0, false, false, true, false, true, false, false, true, false, false)
+			}, false, VersionCompatibility.Parse("6.0"), null, null, false, false);
+			array[18] = new BuiltInMethodTypeSymbol(containingSymbol, "LoadFields", SymbolCompilationScope.DefinedByOwner, false, null, null, false, true, false, false, NavCorLib.BooleanType, true, false, (Symbol method) => new ParameterSymbol[]
+			{
+				new BuiltInParameterSymbol(method, NavCorLib.JokerType, "Fields", 0, false, false, true, false, true, false, false, true, false, false)
+			}, false, VersionCompatibility.Parse("6.0"), null, null, false, false);
+
+

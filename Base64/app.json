@@ -1,0 +1,26 @@
+{
+  "id": "aed4bf86-64d5-46cb-a3a5-c5f75c6fe0e6",
+  "name": "Base64",
+  "publisher": "Erik Hougaard",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "x.png",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 58400,
+      "to": 58449
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://Base64.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}

@@ -53,7 +53,7 @@ page 50100 STQ_ALTris
                     GlobalIsGameOver := FALSE;
                     GlobalNoOfPieces := 0;
                     GlobalPoints := 0;
-                    GlobalSpeed := 500;
+                    GlobalSpeed := 5;
                     CurrPage.ALTris.StartTimer(GlobalSpeed);
                 end;
 
