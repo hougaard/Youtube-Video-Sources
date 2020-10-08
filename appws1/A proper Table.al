@@ -2,7 +2,7 @@ table 56101 "A proper Table"
 {
     Caption = 'A proper Table';
     DataClassification = ToBeClassified;
-    
+
     fields
     {
         field(1; "Primary Key Field"; Code[20])
@@ -14,6 +14,9 @@ table 56101 "A proper Table"
         {
             Caption = 'Description';
             DataClassification = SystemMetadata;
+            trigger OnValidate()
+            begin
+            end;
         }
     }
     keys
@@ -23,5 +26,5 @@ table 56101 "A proper Table"
             Clustered = true;
         }
     }
-    
+
 }

@@ -1,6 +1,6 @@
 {
   "id": "e57afeec-e479-4d61-b852-bbd0f763e8ad",
-  "name": "Demo from Workshop 1",
+  "name": "Demo from Workshop 1+2",
   "publisher": "Erik",
   "version": "1.0.0.0",
   "brief": "",
@@ -12,7 +12,7 @@
   "logo": "",
   "dependencies": [
     {
-      "appId": "a6be809b-2c03-4c1c-b717-49a1a0b6f0ab",
+      "id": "a6be809b-2c03-4c1c-b717-49a1a0b6f0ab",
       "name": "Whats New in v17 Dev",
       "publisher": "Default publisher",
       "version": "1.0.0.0"

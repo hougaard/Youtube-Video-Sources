@@ -13,10 +13,12 @@ page 56101 "The Proper Table Card"
             field("Primary Key Field"; Rec."Primary Key Field")
             {
                 ApplicationArea = All;
+                ToolTip = 'This is the primary key field!!!';
             }
             field(Description; Rec.Description)
             {
                 ApplicationArea = All;
+                ToolTip = 'One more!';
             }
         }
     }
