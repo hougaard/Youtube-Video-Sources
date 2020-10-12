@@ -1,0 +1,36 @@
+{
+    "name": "TTT",
+    "description": "TTT Rules",
+    "rules": [
+        {
+            "id": "AA0215",
+            "action": "Hidden",
+            "justification": "This is OK -> Don't need MS to dictate filenames."
+        },
+        {
+            "id": "AA0072",
+            "action": "Hidden",
+            "justification": "This is OK -> Don't need MS to dictate variable names."
+        },
+        {
+            "id": "AW0009",
+            "action": "Hidden",
+            "justification": "We're using a blob - try to stop us!"
+        },
+        {
+            "id": "AA0214",
+            "action": "Hidden",
+            "justification": "Not working right now..."
+        },
+        {
+            "id": "AA0217",
+            "action": "Hidden",
+            "justification": "No Microsoft, bad Microsoft you don't get it!!!"
+        },
+        {
+            "id": "AA0205",
+            "action": "Hidden",
+            "justification": "No Microsoft, bad Microsoft you don't get it!!!"
+        }
+    ]
+}
