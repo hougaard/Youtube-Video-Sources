@@ -86,9 +86,6 @@ codeunit 54500 "Game Engine"
                        (CurrentBoard[Options.Get(Position2)] = ComputerPlayer) then
                         GridValue += 100;
                 end;
-                foreach Position2 in Options.Values() do
-                    if CurrentBoard[Position2] <> HumanPlayer then
-                        GridValue += 1;
                 Moves.Add(Position, GridValue);
             end;
         end;
