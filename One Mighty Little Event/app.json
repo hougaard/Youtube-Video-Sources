@@ -1,0 +1,26 @@
+{
+  "id": "ca5b9159-89ee-4348-9d45-7535bfa6fff8",
+  "name": "One Mighty Little Event",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://OneMightyLittleEvent.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "36233408-5186-4449-89eb-c56276181dfc",
+  "name": "DependencyAppSource",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+      "publisher": "Microsoft",
+      "name": "System Application",
+      "version": "16.0.0.0"
+    },
+    {
+      "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+      "publisher": "Microsoft",
+      "name": "Base Application",
+      "version": "16.0.0.0"
+    },
+    {
+      "id": "e868ad92-21b8-4e08-af2b-8975a8b06e04",
+      "name": "Image Analyzer",
+      "version": "16.5.0.0",
+      "publisher": "Microsoft"
+    },
+    {
+      "id": "23ebd065-b289-4a68-85e3-b8410e360157",
+      "name": "SharePoint Connector",
+      "version": "1.0.0.0",
+      "publisher": "E Foqus Canada Inc."
+    }
+  ],
+  "screenshots": [],
+  "platform": "16.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://DependencyAppSource.com/help/",
+  "showMyCode": true,
+  "runtime": "5.0"
+}
