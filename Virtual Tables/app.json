@@ -1,0 +1,26 @@
+{
+  "id": "59659e60-805b-419a-97ce-e54fc049e0b9",
+  "name": "Virtual Tables",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 52300,
+      "to": 52349
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://Integerpagehelper.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}
