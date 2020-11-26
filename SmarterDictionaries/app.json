@@ -1,0 +1,26 @@
+{
+  "id": "5b14f387-841e-4791-859a-0b99b7918aa1",
+  "name": "SmarterDictionaries",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "16.0.0.0",
+  "application": "16.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://SmarterDictionaries.com/help/",
+  "showMyCode": true,
+  "runtime": "5.0"
+}
