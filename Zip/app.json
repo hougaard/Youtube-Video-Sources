@@ -1,0 +1,26 @@
+{
+  "id": "a3cc6fc0-2df1-43a1-97d5-0849dff1b221",
+  "name": "Zip",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://Zip.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}
