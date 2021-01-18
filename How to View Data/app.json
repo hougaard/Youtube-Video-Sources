@@ -1,0 +1,26 @@
+{
+  "id": "b120d537-08c4-4a98-b408-331dc549722c",
+  "name": "How to View Data",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 55500,
+      "to": 55549
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://HowtoViewData.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}
