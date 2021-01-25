@@ -1,0 +1,26 @@
+{
+  "id": "40cdd25c-303e-477c-a58f-0c1c7c00e91b",
+  "name": "Filters",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://Filters.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}

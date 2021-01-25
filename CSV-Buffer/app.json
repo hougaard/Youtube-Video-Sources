@@ -1,0 +1,26 @@
+{
+  "id": "1079155b-a0cb-440a-9598-ea40ea65692d",
+  "name": "CSV-Buffer",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://CSV-Buffer.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}
