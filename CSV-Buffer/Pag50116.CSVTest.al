@@ -92,7 +92,6 @@ page 50116 "CSV Test"
     local procedure CreateInvoice(var LineNo: Integer)
     var
         SH: Record "Sales Header";
-        SL: Record "Sales Line";
     begin
         SH.Init();
         SH."Document Type" := SH."Document Type"::Invoice;

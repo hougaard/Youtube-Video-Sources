@@ -1,0 +1,26 @@
+{
+  "id": "73f22305-4996-4573-813c-dba67e788239",
+  "name": "Regain",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 50049
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://Regain.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}

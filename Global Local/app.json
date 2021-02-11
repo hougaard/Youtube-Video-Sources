@@ -1,0 +1,26 @@
+{
+  "id": "29384164-6aa3-4eae-ad8e-bc8c4e93e601",
+  "name": "Global Local",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://GlobalLocal.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}
