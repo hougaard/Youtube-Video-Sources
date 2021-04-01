@@ -1,0 +1,26 @@
+{
+  "id": "b419d778-fcf5-45ee-9914-64b957f65f8c",
+  "name": "BC Chess",
+  "publisher": "Hougaard.com",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 57300,
+      "to": 57349
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://BCChess.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}

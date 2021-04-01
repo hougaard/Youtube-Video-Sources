@@ -4,6 +4,32 @@
 
 pageextension 50100 CustomerListExt extends "Customer List"
 {
+    procedure CalcAvgUnitCost(Item: Record Item; Location: Record Location): decimal
+    var
+        ILE: Record "Item Ledger Entry";
+        Q: Decimal;
+        Total: Decimal;
+    begin
+        ILE.setrange("Item No.", Item."No.");
+        ILE.setrange("Location Code", Location.Code);
+        ILE.setrange(Open, true);
+        ILE.SetCurrentKey("Item No.", "Location Code", Open);
+        if ILE.findset() then
+            repeat
+                ILE.CalcFields("Cost Amount (Actual)", "Cost Amount (Expected)");
+                if ILE."Cost Amount (Actual)" <> 0 then begin
+                    Total += ILE."Cost Amount (Actual)" / ILE.Quantity * ILE."Remaining Quantity";
+                    Q += ILE."Remaining Quantity";
+                end else
+                    if ILE."Cost Amount (Expected)" <> 0 then begin
+                        Total += ILE."Cost Amount (Expected)" / ILE.Quantity * ILE."Remaining Quantity";
+                        Q += ILE."Remaining Quantity";
+                    end;
+            until ILE.Next() = 0;
+        if Q <> 0 then
+            exit(Total / Q);
+    end;
+
     procedure NewSendMail()
     var
         mail: Codeunit "Email Message";

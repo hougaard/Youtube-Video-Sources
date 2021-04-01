@@ -1,0 +1,17 @@
+<Manifest>
+  <Resources>
+    <Script>Javascript/scripts.js</Script>
+  </Resources>
+  <Script><![CDATA[HTMLContainer = document.getElementById("controlAddIn");
+
+Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("ControlReady",[]);]]></Script>
+  <ScriptUrls />
+  <StyleSheetUrls />
+  <RequestedHeight>1</RequestedHeight>
+  <RequestedWidth>1</RequestedWidth>
+  <MinimumHeight>1</MinimumHeight>
+  <MinimumWidth>1</MinimumWidth>
+  <MaximumHeight>1</MaximumHeight>
+  <MaximumWidth>1</MaximumWidth>
+  <Version>2</Version>
+</Manifest>

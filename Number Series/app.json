@@ -1,0 +1,26 @@
+{
+  "id": "bab4edab-4b55-4ba8-a9b8-03622e86a854",
+  "name": "Number Series",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 54300,
+      "to": 54349
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://NumberSeries.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}

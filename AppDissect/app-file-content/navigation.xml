@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NavigationDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:dynamics:NAV:MetaObjects">
+  <ActionContainers ActionContainerType="Departments">
+    <Actions xsi:type="ActionGroupDefinition" Caption="Tic-Tac-Toe" ControlGUID="{39ddf973-9429-47cf-88f7-804bd6862459}">
+      <Actions xsi:type="ActionDefinition" PushAction="RunObject" RunObjectType="Page" TargetID="54500" DepartmentCategory="Tasks" RunObjectSrcTable="54502" ControlGUID="{69338f9f-245e-42fd-bddd-5776554c425c}" Name="Tic-Tac-Toe" CaptionML="ENU=Tic-Tac-Toe" ApplicationArea="#all" AdditionalSearchTerms="ENU=Tic-Tac-Toe" CaptionTranslationKey="Page 179549490 - Property 2879900210" AdditionalSearchTermsTranslationKey="Page 179549490 - Property 3863440606" />
+    </Actions>
+  </ActionContainers>
+</NavigationDefinition>

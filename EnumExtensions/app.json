@@ -1,0 +1,26 @@
+{
+  "id": "e78d7a30-b6df-4441-a6af-33f18adf86c9",
+  "name": "EnumExtensions",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://EnumExtensions.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}

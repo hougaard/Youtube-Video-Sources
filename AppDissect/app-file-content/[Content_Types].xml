@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+    <Default Extension="xml" ContentType="" />
+    <Default Extension="al" ContentType="" />
+    <Default Extension="json" ContentType="" />
+    <Default Extension="js" ContentType="" />
+    <Default Extension="zip" ContentType="" />
+    <Default Extension="dock" ContentType="" />
+</Types>

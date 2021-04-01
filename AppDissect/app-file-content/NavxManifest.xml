@@ -1,0 +1,14 @@
+<Package xmlns="http://schemas.microsoft.com/navx/2015/manifest">
+  <App Id="9bcb9859-c9ae-40af-aa92-f1488b96c1f6" Name="Tic-Tac-Toe" Publisher="Erik Hougaard" Brief="" Description="" Version="1.0.0.0" CompatibilityId="0.0.0.0" PrivacyStatement="" ApplicationInsightsKey="00000000-0000-0000-0000-000000000000" EULA="" Help="" HelpBaseUrl="" ContextSensitiveHelpUrl="https://Tic-Tac-Toe.com/help/" Url="" Logo="" Platform="17.0.0.0" Application="17.0.0.0" Runtime="6.0" Target="Extension" ShowMyCode="True" />
+  <IdRanges>
+    <IdRange MinObjectId="54500" MaxObjectId="54549" />
+  </IdRanges>
+  <Dependencies />
+  <InternalsVisibleTo />
+  <ScreenShots />
+  <SupportedLocales />
+  <Features />
+  <PreprocessorSymbols />
+  <SuppressWarnings />
+  <KeyVaultUrls />
+</Package>

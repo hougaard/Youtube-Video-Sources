@@ -1,0 +1,26 @@
+{
+  "id": "96183fb6-336a-4743-a989-01132f654a09",
+  "name": "overloading",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50214,
+      "to": 50218
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://overloading.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0"
+}
