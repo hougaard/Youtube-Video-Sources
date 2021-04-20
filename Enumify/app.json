@@ -1,0 +1,26 @@
+{
+  "id": "10041ced-77d1-49a3-ae30-0fe6debf5bd6",
+  "name": "Enumify",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 54800,
+      "to": 54849
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://Enumify.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}

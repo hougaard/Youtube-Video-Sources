@@ -1,0 +1,26 @@
+{
+  "id": "7a41fffb-480e-4d30-85b6-0036ef18c560",
+  "name": "AddKeysToStandardTables",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://AddKeysToStandardTables.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}
