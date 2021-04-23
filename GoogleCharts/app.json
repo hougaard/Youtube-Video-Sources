@@ -1,0 +1,26 @@
+{
+  "id": "2ad82330-66ba-46c6-8d60-588d2458f95a",
+  "name": "GoogleCharts",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 51100,
+      "to": 51149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://GoogleCharts.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}
