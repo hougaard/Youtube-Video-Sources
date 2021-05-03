@@ -32,7 +32,10 @@ table 54300 Dude
     var
         Setup: Record "Dude Setup";
         NoMgt: Codeunit NoSeriesManagement;
+        Ref: RecordRef;
     begin
+        Ref.Open(DATABASE::Dude);
+
         if No = '' then begin
             Setup.Get();
             No := NoMgt.GetNextNo(Setup."No. Series for Dude", WORKDATE, true);

@@ -1,0 +1,27 @@
+{
+  "id": "2bb44f88-a63e-4bf1-af88-1b445d3d6e11",
+  "name": "checklist hacking",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://checklisthacking.com/help/",
+  "showMyCode": true,
+  "target": "Cloud",
+  "runtime": "7.0"
+}

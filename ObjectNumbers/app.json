@@ -1,0 +1,26 @@
+{
+  "id": "dfa77d5f-b964-4cf8-8a49-f3ff284fabac",
+  "name": "ObjectNumbers",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://ObjectNumbers.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}
