@@ -1,0 +1,26 @@
+{
+  "id": "c3361d46-5ada-4af2-8664-c1a859b89944",
+  "name": "TheTimeProblem",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 53400,
+      "to": 53449
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://TheTimeProblem.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}

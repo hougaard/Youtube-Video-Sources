@@ -5,10 +5,12 @@ var Editor
 function Init() {
 
     var div = document.getElementById("controlAddIn");
+    div.style =  "overflow:scroll;max-height: 300px;";
     div.innerHTML = "";
     InputArea = document.createElement("textarea");
     InputArea.id = "Comment";
     InputArea.name = "Comment";
+    InputArea.style = "overflow:scroll;max-height: 300px;";
     div.appendChild(InputArea);
     
     ClassicEditor

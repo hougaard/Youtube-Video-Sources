@@ -1,7 +1,7 @@
 {
   "id": "362079c8-83e6-48cb-9099-7c19886bfcfa",
-  "name": "Exchange from Openrates.io",
-  "publisher": "Default publisher",
+  "name": "openrates.io Exchange Rates",
+  "publisher": "Hougaard",
   "version": "1.0.0.0",
   "brief": "",
   "description": "",
@@ -16,8 +16,8 @@
   "application": "17.0.0.0",
   "idRanges": [
     {
-      "from": 52400,
-      "to": 52449
+      "from": 70310155,
+      "to": 70310174
     }
   ],
   "contextSensitiveHelpUrl": "https://ExchangefromOpenrates.com/help/",

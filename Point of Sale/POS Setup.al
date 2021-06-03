@@ -7,7 +7,7 @@ table 57100 "POS Setup"
         {
             DataClassification = SystemMetadata;
         }
-        field(10; "Cash Customer"; Code[20])
+        field(13; "Cash Customer"; Code[20])
         {
             Caption = 'Cash Customer';
             TableRelation = Customer."No.";

@@ -1,0 +1,26 @@
+{
+  "id": "68b04182-5af2-42e6-9952-08a930616ed4",
+  "name": "Hash Values",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://HashValues.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}

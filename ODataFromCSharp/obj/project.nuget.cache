@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "gUIMsittvcx1XVPCU1VLQnINIoeg0AW5ktGGatYCEVGCNVd0+F4Dqg4kAYf6SzsznwkwIpUl3omFJSjSFoRe9g==",
+  "success": true,
+  "projectFilePath": "c:\\Projects\\Youtube\\ODataFromCSharp\\ODataFromCSharp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\erik\\.nuget\\packages\\microsoft.odata.client\\7.9.0\\microsoft.odata.client.7.9.0.nupkg.sha512",
+    "C:\\Users\\erik\\.nuget\\packages\\microsoft.odata.core\\7.9.0\\microsoft.odata.core.7.9.0.nupkg.sha512",
+    "C:\\Users\\erik\\.nuget\\packages\\microsoft.odata.edm\\7.9.0\\microsoft.odata.edm.7.9.0.nupkg.sha512",
+    "C:\\Users\\erik\\.nuget\\packages\\microsoft.spatial\\7.9.0\\microsoft.spatial.7.9.0.nupkg.sha512",
+    "C:\\Users\\erik\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
+    "C:\\Users\\erik\\.nuget\\packages\\system.text.encodings.web\\4.6.0\\system.text.encodings.web.4.6.0.nupkg.sha512",
+    "C:\\Users\\erik\\.nuget\\packages\\system.text.json\\5.0.2\\system.text.json.5.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

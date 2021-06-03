@@ -1,8 +1,9 @@
 controladdin Wysiwyg
 {
-    VerticalStretch = true;
+    //VerticalStretch = true;
     HorizontalStretch = true;
     MinimumHeight = 300;
+    RequestedHeight = 300;
     Scripts = 'Editor/Scripts/ckeditor.js', 'Editor/Scripts/MainScript.js';
     StartupScript = 'Editor/Scripts/startupScript.js';
     RecreateScript = 'Editor/Scripts/recreateScript.js';
