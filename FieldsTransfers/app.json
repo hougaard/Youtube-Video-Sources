@@ -1,0 +1,26 @@
+{
+  "id": "0f8c6e68-c80d-473b-a6e9-899e6a09be7c",
+  "name": "FieldsTransfers",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://FieldsTransfers.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}

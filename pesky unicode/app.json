@@ -1,0 +1,26 @@
+{
+  "id": "1f701598-db03-4237-bb7d-1a98646050d0",
+  "name": "pesky unicode",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 56700,
+      "to": 56749
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://peskyunicode.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}

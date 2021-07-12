@@ -1,0 +1,26 @@
+{
+  "id": "3cc99962-85ae-41f4-93b1-5d41f0018ba3",
+  "name": "RawReportData",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://RawReportData.com/help/",
+  "showMyCode": true,
+  "runtime": "7.2"
+}

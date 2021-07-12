@@ -1,0 +1,16 @@
+c:\projects\youtube\runfrombc\console\runfrombc\bin\Debug\net5.0\runfrombc.exe
+c:\projects\youtube\runfrombc\console\runfrombc\bin\Debug\net5.0\runfrombc.deps.json
+c:\projects\youtube\runfrombc\console\runfrombc\bin\Debug\net5.0\runfrombc.runtimeconfig.json
+c:\projects\youtube\runfrombc\console\runfrombc\bin\Debug\net5.0\runfrombc.runtimeconfig.dev.json
+c:\projects\youtube\runfrombc\console\runfrombc\bin\Debug\net5.0\runfrombc.dll
+c:\projects\youtube\runfrombc\console\runfrombc\bin\Debug\net5.0\ref\runfrombc.dll
+c:\projects\youtube\runfrombc\console\runfrombc\bin\Debug\net5.0\runfrombc.pdb
+c:\projects\youtube\runfrombc\console\runfrombc\obj\Debug\net5.0\runfrombc.csproj.AssemblyReference.cache
+c:\projects\youtube\runfrombc\console\runfrombc\obj\Debug\net5.0\runfrombc.GeneratedMSBuildEditorConfig.editorconfig
+c:\projects\youtube\runfrombc\console\runfrombc\obj\Debug\net5.0\runfrombc.AssemblyInfoInputs.cache
+c:\projects\youtube\runfrombc\console\runfrombc\obj\Debug\net5.0\runfrombc.AssemblyInfo.cs
+c:\projects\youtube\runfrombc\console\runfrombc\obj\Debug\net5.0\runfrombc.csproj.CoreCompileInputs.cache
+c:\projects\youtube\runfrombc\console\runfrombc\obj\Debug\net5.0\runfrombc.dll
+c:\projects\youtube\runfrombc\console\runfrombc\obj\Debug\net5.0\ref\runfrombc.dll
+c:\projects\youtube\runfrombc\console\runfrombc\obj\Debug\net5.0\runfrombc.pdb
+c:\projects\youtube\runfrombc\console\runfrombc\obj\Debug\net5.0\runfrombc.genruntimeconfig.cache

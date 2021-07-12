@@ -6,10 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Connected Services\OData Service\OData ServiceCsdl-bc18.xml" />
     <None Remove="Connected Services\OData Service\OData ServiceCsdl.xml" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Connected Services\OData Service\OData ServiceCsdl-bc18.xml" />
     <EmbeddedResource Include="Connected Services\OData Service\OData ServiceCsdl.xml" />
   </ItemGroup>
 

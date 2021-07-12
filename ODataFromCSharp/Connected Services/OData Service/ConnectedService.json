@@ -11,7 +11,7 @@
     "ExcludedOperationImports": [],
     "ExcludedBoundOperations": [],
     "ServiceName": "OData Service",
-    "Endpoint": "http://bc18:7048/BC/ODataV4/$metadata",
+    "Endpoint": "http://bc18:7048/BC/api/v2.0/$metadata",
     "EdmxVersion": {
       "Major": 4,
       "Minor": 0,
@@ -20,9 +20,9 @@
       "MajorRevision": 0,
       "MinorRevision": 0
     },
-    "GeneratedFileNamePrefix": "BC18",
+    "GeneratedFileNamePrefix": "BCAPI",
     "UseNamespacePrefix": true,
-    "NamespacePrefix": "BC",
+    "NamespacePrefix": "BCAPI",
     "UseDataServiceCollection": true,
     "MakeTypesInternal": false,
     "OpenGeneratedFilesInIDE": false,

@@ -174,9 +174,11 @@ page 57100 "Point of sale"
         Modify(true);
         Post.SetSuppressCommit(true);
         Post.Run(Rec);
-        PosStatus := PosStatus::"Awaiting new Receipt";
-        CurrPage.Update(false);
-        Currpage.Scanner.SetFocus();
+        // setfilter("No.", '%1', '');
+        // PosStatus := PosStatus::"Awaiting new Receipt";
+        // CurrPage.Update(false);
+        // Currpage.Scanner.SetFocus();
+        page.run(PAGE::"Point of sale");
     end;
 
 

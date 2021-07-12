@@ -5,7 +5,6 @@ c:\Projects\Youtube\ODataFromCSharp\bin\Debug\net5.0\ODataFromCSharp.runtimeconf
 c:\Projects\Youtube\ODataFromCSharp\bin\Debug\net5.0\ODataFromCSharp.dll
 c:\Projects\Youtube\ODataFromCSharp\bin\Debug\net5.0\ref\ODataFromCSharp.dll
 c:\Projects\Youtube\ODataFromCSharp\bin\Debug\net5.0\ODataFromCSharp.pdb
-c:\Projects\Youtube\ODataFromCSharp\obj\Debug\net5.0\ODataFromCSharp.csprojAssemblyReference.cache
 c:\Projects\Youtube\ODataFromCSharp\obj\Debug\net5.0\ODataFromCSharp.GeneratedMSBuildEditorConfig.editorconfig
 c:\Projects\Youtube\ODataFromCSharp\obj\Debug\net5.0\ODataFromCSharp.AssemblyInfoInputs.cache
 c:\Projects\Youtube\ODataFromCSharp\obj\Debug\net5.0\ODataFromCSharp.AssemblyInfo.cs
@@ -20,3 +19,4 @@ c:\Projects\Youtube\ODataFromCSharp\bin\Debug\net5.0\Microsoft.OData.Edm.dll
 c:\Projects\Youtube\ODataFromCSharp\bin\Debug\net5.0\Microsoft.Spatial.dll
 c:\Projects\Youtube\ODataFromCSharp\bin\Debug\net5.0\System.Text.Json.dll
 c:\Projects\Youtube\ODataFromCSharp\obj\Debug\net5.0\ODataFromCSharp.csproj.CopyComplete
+c:\Projects\Youtube\ODataFromCSharp\obj\Debug\net5.0\ODataFromCSharp.csproj.AssemblyReference.cache
