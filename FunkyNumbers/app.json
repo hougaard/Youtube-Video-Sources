@@ -1,0 +1,26 @@
+{
+  "id": "5647a921-ca31-4256-a69b-39737107e264",
+  "name": "FunkyNumbers",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://FunkyNumbers.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}

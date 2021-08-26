@@ -1,0 +1,33 @@
+{
+  "id": "f3845c99-5b7d-4fff-8cdf-04473a67e746",
+  "name": "Interface",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+    "id": "18a4d438-88d1-44ee-a38d-3c0ea0d77338",
+    "name": "Cloud Replicator",
+    "publisher": "E Foqus Canada Inc.",
+    "version": "1.0.0.22"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://Interface.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}

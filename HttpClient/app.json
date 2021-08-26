@@ -1,0 +1,26 @@
+{
+  "id": "eca8d7f9-df6e-4763-b6e1-e67da0a54e2d",
+  "name": "HttpClient",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://HttpClient.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}

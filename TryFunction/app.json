@@ -1,0 +1,26 @@
+{
+  "id": "633b1934-492b-4a8f-8a03-0f9e31a95c92",
+  "name": "TryFunction",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://TryFunction.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}

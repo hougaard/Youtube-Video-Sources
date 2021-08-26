@@ -1,0 +1,26 @@
+{
+  "id": "62910054-742d-4742-a419-a633a412a117",
+  "name": "CodeFields",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://CodeFields.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}
