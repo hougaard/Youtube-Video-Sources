@@ -1,0 +1,26 @@
+{
+  "id": "b787c5fe-f7d8-42aa-a9ba-320c1ac52997",
+  "name": "BatchPostAndEmail",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://BatchPostAndEmail.com/help/",
+  "showMyCode": true,
+  "runtime": "7.1"
+}
