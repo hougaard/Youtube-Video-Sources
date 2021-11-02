@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="apptranslation">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 1621852298 - Field 3689535207 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Translate example - Field CustomerNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1255613137 - Method 716454850 - NamedType 1359314607" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1255613137">
+          <source>This message can be translated.</source>
+          <note from="Developer" annotates="general" priority="2">This is a comment</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerListExt - Method OnOpenPage - NamedType ToTranslate</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

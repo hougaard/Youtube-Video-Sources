@@ -33,9 +33,17 @@ page 56122 "Workbench"
                 begin
                     GlobalErrorTxt := ErrorTxt;
                 end;
+                trigger ControlReady()
+                begin
+
+                end;
             }
         }
     }
+    trigger OnOpenPage()
+    begin
+        
+    end;
     var
         CodeTxt: Text;
         GlobalErrorTxt: Text;

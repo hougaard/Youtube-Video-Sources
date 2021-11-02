@@ -1,0 +1,26 @@
+{
+  "id": "dc548071-d83a-40ae-a265-3551ed6af4d1",
+  "name": "xRec",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://xRec.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}

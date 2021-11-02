@@ -1,0 +1,26 @@
+{
+  "id": "5cbb3008-280f-49b5-8f3a-a1c9c1e81f10",
+  "name": "Temporary Tables",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://TemporaryTables.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "e0ec7a61-fb04-4b40-b167-fe3697c068a0",
+  "name": "ThePestkyBug",
+  "publisher": "Default publisher",
+  "version": "1.0.0.1",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://ThePestkyBug.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}

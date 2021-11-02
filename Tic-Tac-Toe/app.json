@@ -22,5 +22,6 @@
   ],
   "contextSensitiveHelpUrl": "https://Tic-Tac-Toe.com/help/",
   "showMyCode": true,
+  "features": ["TranslationFile"],
   "runtime": "6.0"
 }

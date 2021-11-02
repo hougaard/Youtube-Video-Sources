@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("ODataFromCSharp")]
+[assembly: System.Reflection.AssemblyProductAttribute("Simple Object Designer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ODataFromCSharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 

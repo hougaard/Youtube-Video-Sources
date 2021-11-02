@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="xml" source-language="en-US" target-language="nl-NL" tool-id="hougaard.com">
+    <header>
+      <tool tool-id="hougaard.com" tool-name="Erik Hougaard" tool-company="hougaard.com" />
+    </header>
+    <body>
+      <group>
+        <trans-unit id="Table 1621852298 - Field 3689535207 - Property 2879900210">
+          <source>Customer No.</source>
+          <target>Klantnr.</target>
+          <note />
+        </trans-unit>
+        <trans-unit id="PageExtension 1255613137 - Method 716454850 - NamedType 1359314607">
+          <source>This message can be translated.</source>
+          <target>Deze boodschap kan vertaald worden.</target>
+          <note>This is a comment</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
