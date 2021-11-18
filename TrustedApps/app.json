@@ -1,0 +1,36 @@
+{
+  "id": "525aff3b-0e3a-4834-9eba-5d7a379bc136",
+  "name": "TrustedApps",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "a53a4bb0-aa53-8ff8-77d6-fe3388db0eb8",
+      "name": "Recommended Apps",
+      "publisher": "Microsoft",
+      "version": "19.0.29894.30693"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "19.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "8.0"
+}
