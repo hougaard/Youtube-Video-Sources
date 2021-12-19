@@ -1,11 +1,36 @@
-// Welcome to your new AL extension.
-// Remember that object names and IDs should be unique across all extensions.
-// AL snippets start with t*, like tpageext - give them a try and happy coding!
-
-pageextension 50100 CustomerListExt extends "Customer List"
+pageextension 50144 "Customer Card" extends "Customer Card"
 {
-    trigger OnOpenPage();
+    layout
+    {
+        modify("Credit Limit (LCY)")
+        {
+            ShowMandatory = Rec.Blocked = Rec.Blocked::" ";
+            BlankZero = true;
+        }
+    }
+    trigger OnModifyRecord(): Boolean
     begin
-        Message('App published: Hello world');
+        if Rec."Credit Limit (LCY)" = 0 then
+            error('You cannot created a customer without a credit limit!');
+        exit(true);
     end;
+}
+
+
+tableextension 50133 "Sales Header" extends "Sales Header"
+{
+    fields
+    {
+        modify("Sell-to Customer No.")
+        {
+            trigger OnAfterValidate()
+            var
+                Customer: Record Customer;
+            begin
+                Customer.Get(Rec."Sell-to Customer No.");
+                if Customer."Credit Limit (LCY)" = 0 then
+                    error('You cannot use a customer without a credit limit!');
+            end;
+        }
+    }
 }
