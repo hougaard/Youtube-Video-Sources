@@ -1,0 +1,36 @@
+{
+  "id": "6270a89c-ea5c-4f0f-9ede-830a6988eaf3",
+  "name": "ransomware2",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "5a2bd722-18cb-499c-bf60-4ac4ac828f01",
+      "name": "Ransomware",
+      "publisher": "Default publisher",
+      "version": "1.0.0.2"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "19.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "8.0"
+}
