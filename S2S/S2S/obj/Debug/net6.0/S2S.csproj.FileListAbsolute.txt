@@ -1,0 +1,17 @@
+c:\Projects\Youtube\S2S\S2S\obj\Debug\net6.0\S2S.csproj.AssemblyReference.cache
+c:\Projects\Youtube\S2S\S2S\obj\Debug\net6.0\S2S.GeneratedMSBuildEditorConfig.editorconfig
+c:\Projects\Youtube\S2S\S2S\obj\Debug\net6.0\S2S.AssemblyInfoInputs.cache
+c:\Projects\Youtube\S2S\S2S\obj\Debug\net6.0\S2S.AssemblyInfo.cs
+c:\Projects\Youtube\S2S\S2S\obj\Debug\net6.0\S2S.csproj.CoreCompileInputs.cache
+c:\Projects\Youtube\S2S\S2S\bin\Debug\net6.0\S2S.exe
+c:\Projects\Youtube\S2S\S2S\bin\Debug\net6.0\S2S.deps.json
+c:\Projects\Youtube\S2S\S2S\bin\Debug\net6.0\S2S.runtimeconfig.json
+c:\Projects\Youtube\S2S\S2S\bin\Debug\net6.0\S2S.dll
+c:\Projects\Youtube\S2S\S2S\bin\Debug\net6.0\ref\S2S.dll
+c:\Projects\Youtube\S2S\S2S\bin\Debug\net6.0\S2S.pdb
+c:\Projects\Youtube\S2S\S2S\obj\Debug\net6.0\S2S.dll
+c:\Projects\Youtube\S2S\S2S\obj\Debug\net6.0\ref\S2S.dll
+c:\Projects\Youtube\S2S\S2S\obj\Debug\net6.0\S2S.pdb
+c:\Projects\Youtube\S2S\S2S\obj\Debug\net6.0\S2S.genruntimeconfig.cache
+c:\Projects\Youtube\S2S\S2S\bin\Debug\net6.0\Newtonsoft.Json.dll
+c:\Projects\Youtube\S2S\S2S\obj\Debug\net6.0\S2S.csproj.CopyComplete

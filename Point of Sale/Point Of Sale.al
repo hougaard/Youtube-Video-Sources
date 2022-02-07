@@ -8,6 +8,8 @@ page 57100 "Point of sale"
     PageType = Document;
     UsageCategory = Tasks;
     ApplicationArea = All;
+    AboutTitle = 'Welcome to Point of Sale';
+    AboutText = 'You can start scanning item from this screen to quickly sell a lot of stuff in your nice shop.';
 
     layout
     {
@@ -18,19 +20,25 @@ page 57100 "Point of sale"
                 Caption = 'Status';
                 ApplicationArea = all;
                 Editable = false;
+                AboutTitle = 'Receipt Status';
+                AboutText = 'Here you can see if you have an active receipt.';
             }
-            field("No."; "No.")
+            field("No."; Rec."No.")
             {
                 ApplicationArea = all;
             }
-            field("Sell-to Customer Name"; "Sell-to Customer Name")
+            field("Sell-to Customer Name"; Rec."Sell-to Customer Name")
             {
                 ApplicationArea = all;
+                AboutTitle = 'Specify the customer';
+                AboutText = 'If your''re not selling with cash payment, then you can specify a customer here';
             }
             part(Lines; "POS Lines")
             {
                 SubPageLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
                 ApplicationArea = all;
+                AboutTitle = 'Receipt Lines';
+                AboutText = 'Here are all the items on the receipt that has been entered or scanned.';
             }
             usercontrol(Scanner; ScannerInterface)
             {
@@ -65,6 +73,8 @@ page 57100 "Point of sale"
             {
                 SubPageLink = "Document Type" = field("Document Type"), "No." = field("No.");
                 ApplicationArea = all;
+                AboutTitle = 'Receipt Totals';
+                AboutText = 'Here you can check the total of the receipt during entry and scanning.';
             }
         }
     }
@@ -81,6 +91,8 @@ page 57100 "Point of sale"
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 PromotedOnly = true;
+                AboutTitle = 'Start a new receipt';
+                AboutText = 'Click here to start a new receipt, or you can just start scanning if you have a scanner.';
                 trigger OnAction()
                 begin
                     NewReceipt();
@@ -95,6 +107,8 @@ page 57100 "Point of sale"
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 PromotedOnly = true;
+                AboutTitle = 'Receive Payment';
+                AboutText = 'Click "Pay" to receive payment from the customer';
                 trigger OnAction()
                 var
                     PM: REcord "Payment Method";
@@ -110,7 +124,7 @@ page 57100 "Point of sale"
     }
     trigger OnOpenPage()
     begin
-        setfilter("No.", '%1', '');
+        Rec.setfilter("No.", '%1', '');
         PosStatus := PosStatus::"Awaiting new Receipt";
     end;
 

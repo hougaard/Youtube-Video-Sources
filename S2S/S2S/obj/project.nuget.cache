@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "NoYU+Ta6XhX/V8ZLIF8Zog6DFavqU3KWDD1sW0Pk6Py5Q41Z0C9iBQ4z6vMRspRkTLfpkhedbHtWO+K2AUxm7w==",
+  "success": true,
+  "projectFilePath": "c:\\Projects\\Youtube\\S2S\\S2S\\S2S.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\erik\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
