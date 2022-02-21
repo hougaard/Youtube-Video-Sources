@@ -1,5 +1,43 @@
 codeunit 74500 "Json Tools"
 {
+    procedure Json2Rec(JO: JsonObject; Rec: Variant): Variant
+    var
+        Ref: RecordRef;
+    begin
+        Ref.GetTable(Rec);
+        exit(Json2Rec(JO, Ref.Number()));
+    end;
+
+    procedure Json2Rec(JO: JsonObject; TableNo: Integer): Variant
+    var
+        Ref: RecordRef;
+        FR: FieldRef;
+        FieldHash: Dictionary of [Text, Integer];
+        i: Integer;
+        JsonKey: Text;
+        T: JsonToken;
+        JsonKeyValue: JsonValue;
+        RecVar: Variant;
+    begin
+        Ref.OPEN(TableNo);
+        for i := 1 to Ref.FieldCount() do begin
+            FR := Ref.FieldIndex(i);
+            FieldHash.Add(GetJsonFieldName(FR), FR.Number);
+        end;
+        Ref.Init();
+        foreach JsonKey in JO.Keys() do begin
+            if JO.Get(JsonKey, T) then begin
+                if T.IsValue() then begin
+                    JsonKeyValue := T.AsValue();
+                    FR := Ref.Field(FieldHash.Get(JsonKey));
+                    AssignValueToFieldRef(FR, JsonKeyValue);
+                end;
+            end;
+        end;
+        RecVar := Ref;
+        exit(RecVar);
+    end;
+
     procedure Rec2Json(Rec: Variant): JsonObject
     var
         Ref: RecordRef;
@@ -65,5 +103,20 @@ codeunit 74500 "Json Tools"
                 Name[i] := '_';
         end;
         exit(Name.Replace('__', '_').TrimEnd('_').TrimStart('_'));
+    end;
+
+    local procedure AssignValueToFieldRef(var FR: FieldRef; JsonKeyValue: JsonValue)
+    begin
+        case FR.Type() of
+            FieldType::Code,
+            FieldType::Text:
+                FR.Value := JsonKeyValue.AsText();
+            FieldType::Integer:
+                FR.Value := JsonKeyValue.AsInteger();
+            FieldType::Date:
+                FR.Value := JsonKeyValue.AsDate();
+            else
+                error('%1 is not a supported field type', FR.Type());
+        end;
     end;
 }
