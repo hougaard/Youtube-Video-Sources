@@ -7,11 +7,11 @@ function DragDropEnable(IDField)
 {
     _field = IDField;
     let DropTable = window.parent.document.querySelector(".ms-nav-grid-data-table");
-    //console.log(DropTable);
+    console.log(DropTable);
 
     var rows = DropTable.querySelectorAll('table tr');
     [].forEach.call(rows,function(row) {
-        //console.log(row);
+        console.log(row);
         if (row.hasAttribute('aria-rowindex'))
         {
             row.setAttribute('draggable','true');
@@ -26,7 +26,7 @@ function handleDrop(e)
     if (e.stopPropagation)
         e.stopPropagation(); 
     
-    var _CurrentDrop = e.srcElement.closest("table tr").querySelector("[aria-label^='" + _field + "']").getAttribute("aria-label").split(', ')[1];
+    var _CurrentDrop = e.srcElement.closest("table tr").querySelector("[ariaLabel^='" + _field + "']").getAttribute("title");
     console.log(_CurrentDrag,"dropped on", _CurrentDrop);
 
     
@@ -34,8 +34,8 @@ function handleDrop(e)
 }
 function handleDragStart(e)
 {
-    //console.log(e);
-    _CurrentDrag = e.srcElement.querySelector("[aria-label^='" + _field + "']").getAttribute("aria-label").split(', ')[1];
+    console.log(e);
+    _CurrentDrag = e.srcElement.querySelector("[ariaLabel^='" + _field + "']").getAttribute("title");
 }
 function handleDragOver(e)
 {

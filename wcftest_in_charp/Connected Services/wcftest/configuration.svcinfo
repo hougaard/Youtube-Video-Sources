@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;wcftest_Binding&quot;&gt;&lt;security mode=&quot;Transport&quot; /&gt;&lt;/Data&gt;" bindingType="basicHttpBinding" name="wcftest_Binding" />
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;wcftest_Binding1&quot; /&gt;" bindingType="basicHttpBinding" name="wcftest_Binding1" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;https://api.businesscentral.dynamics.com/v2.0/c1f19d2f-252e-4d89-a7c7-5bb9042d59eb/bc20/WS/CRONUS%20Canada,%20Inc./Codeunit/wcftest?tenant=msca1a7355t19721013&amp;amp;aid=FIN&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;wcftest_Binding&quot; contract=&quot;wcftest.wcftest_Port&quot; name=&quot;wcftest_Port&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;https://api.businesscentral.dynamics.com/v2.0/c1f19d2f-252e-4d89-a7c7-5bb9042d59eb/bc20/WS/CRONUS%20Canada,%20Inc./Codeunit/wcftest?tenant=msca1a7355t19721013&amp;amp;aid=FIN&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;wcftest_Binding&quot; contract=&quot;wcftest.wcftest_Port&quot; name=&quot;wcftest_Port&quot; /&gt;" contractName="wcftest.wcftest_Port" name="wcftest_Port" />
+  </endpoints>
+</configurationSnapshot>

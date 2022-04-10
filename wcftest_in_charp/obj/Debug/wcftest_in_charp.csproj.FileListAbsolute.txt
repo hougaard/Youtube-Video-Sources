@@ -1,0 +1,11 @@
+c:\projects\youtube\wcftest_in_charp\obj\Debug\wcftest_in_charp.csproj.AssemblyReference.cache
+c:\projects\youtube\wcftest_in_charp\obj\Debug\wcftest_in_charp.csproj.SuggestedBindingRedirects.cache
+c:\projects\youtube\wcftest_in_charp\obj\Debug\wcftest_in_charp.csproj.CoreCompileInputs.cache
+c:\projects\youtube\wcftest_in_charp\bin\Debug\wcftest_in_charp.exe.config
+c:\projects\youtube\wcftest_in_charp\bin\Debug\wcftest_in_charp.exe
+c:\projects\youtube\wcftest_in_charp\bin\Debug\wcftest_in_charp.pdb
+c:\projects\youtube\wcftest_in_charp\obj\Debug\wcftest_in_charp.exe
+c:\projects\youtube\wcftest_in_charp\obj\Debug\wcftest_in_charp.pdb
+c:\projects\youtube\wcftest_in_charp\bin\Debug\Newtonsoft.Json.dll
+c:\projects\youtube\wcftest_in_charp\bin\Debug\Newtonsoft.Json.xml
+c:\projects\youtube\wcftest_in_charp\obj\Debug\wcftest_in_charp.csproj.CopyComplete

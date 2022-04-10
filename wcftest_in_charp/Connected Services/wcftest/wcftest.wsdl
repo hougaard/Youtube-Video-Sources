@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/wcftest" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/wcftest" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/wcftest" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="Ping">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="parm" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Ping_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="Ping">
+    <part name="parameters" element="tns:Ping" />
+  </message>
+  <message name="Ping_Result">
+    <part name="parameters" element="tns:Ping_Result" />
+  </message>
+  <portType name="wcftest_Port">
+    <operation name="Ping">
+      <input name="Ping" message="tns:Ping" />
+      <output name="Ping_Result" message="tns:Ping_Result" />
+    </operation>
+  </portType>
+  <binding name="wcftest_Binding" type="tns:wcftest_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="Ping">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/wcftest:Ping" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Ping">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Ping_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="wcftest">
+    <port name="wcftest_Port" binding="tns:wcftest_Binding">
+      <address location="https://api.businesscentral.dynamics.com/v2.0/c1f19d2f-252e-4d89-a7c7-5bb9042d59eb/bc20/WS/CRONUS%20Canada,%20Inc./Codeunit/wcftest?tenant=msca1a7355t19721013&amp;aid=FIN" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>
