@@ -1,4 +1,4 @@
-codeunit 54581 "Dice 06"
+codeunit 54581 "Dice Six-Sided"
 {
     procedure GetValue(): Integer
     begin

@@ -3,8 +3,8 @@ page 54580 Yahtzee
     InsertAllowed = false;
     ModifyAllowed = true;
     DeleteAllowed = false;
-    PageType = Document;
-    SourceTable = "Yahtzee Data Dice Round";
+    PageType = Card;
+    SourceTable = "Yahtzee Data Dice";
     RefreshOnActivate = true;
     DataCaptionExpression = StrSubstNo('Game %1', Rec.GameId);
     UsageCategory = Tasks;
@@ -24,6 +24,7 @@ page 54580 Yahtzee
                     field(Dice1Img; Rec.Dice1Img)
                     {
                         ShowCaption = false;
+                        Editable = false;
                         ApplicationArea = All;
                     }
                     field(Dice1Val; Rec.Dice1Val)
@@ -44,6 +45,7 @@ page 54580 Yahtzee
                     field(Dice2Img; Rec.Dice2Img)
                     {
                         ShowCaption = false;
+                        Editable = false;
                         ApplicationArea = All;
                     }
                     field(Dice2Val; Rec.Dice2Val)
@@ -64,6 +66,7 @@ page 54580 Yahtzee
                     field(Dice3Img; Rec.Dice3Img)
                     {
                         ShowCaption = false;
+                        Editable = false;
                         ApplicationArea = All;
                     }
                     field(Dice3Val; Rec.Dice3Val)
@@ -84,6 +87,7 @@ page 54580 Yahtzee
                     field(Dice4Img; Rec.Dice4Img)
                     {
                         ShowCaption = false;
+                        Editable = false;
                         ApplicationArea = All;
                     }
                     field(Dice4Val; Rec.Dice4Val)
@@ -104,6 +108,7 @@ page 54580 Yahtzee
                     field(Dice5Img; Rec.Dice5Img)
                     {
                         ShowCaption = false;
+                        Editable = false;
                         ApplicationArea = All;
                     }
                     field(Dice5Val; Rec.Dice5Val)
@@ -122,6 +127,13 @@ page 54580 Yahtzee
                 {
                     ShowCaption = false;
                     //Visible = GameRunning;
+                    field(DiceTurnNumFld; Rec.DiceTurnDisplay())
+                    {
+                        ShowCaption = false;
+                        ToolTip = 'Num of Game Turn';
+                        ApplicationArea = All;
+                        Style = Subordinate;
+                    }
                     field(DiceRoundCountFld; Rec.DiceRoundDisplay())
                     {
                         ShowCaption = false;
@@ -141,6 +153,11 @@ page 54580 Yahtzee
                         end;
                     }
                 }
+            }
+            part(ScorePart; "Yahtzee Score Part")
+            {
+                SubPageLink = GameId = field(GameId);
+                ApplicationArea = All;
             }
             group(StatGrp)
             {
@@ -266,7 +283,7 @@ page 54580 Yahtzee
 
     local procedure runStatTest(): Integer
     var
-        Dice: Codeunit "Dice 06";
+        Dice: Codeunit "Dice Six-Sided";
         idx: Integer;
     begin
         // Reset statistics
@@ -298,8 +315,7 @@ page 54580 Yahtzee
 
     procedure OnChanceApplied()
     begin
-        Rec.Get(0);
-        Engine.NewTurn();
+        Engine.NewTurn(Rec);
         UpdPageState();
     end;
 
@@ -317,7 +333,7 @@ page 54580 Yahtzee
     begin
         Randomize();
         CurrPage.Editable(true);
-        Rec.Get(0);
+        Clear(Rec);
         UpdPageState();
     end;
 
@@ -328,7 +344,7 @@ page 54580 Yahtzee
     end;
 
     var
-        Engine: Codeunit "Yahtzee Engine";
+        Engine: Codeunit Yahtzee;
         ActionLabelDiceRoll: Label 'Roll dice';
         stat: Array[6] of Integer;
         ShowDiceValue: Boolean;

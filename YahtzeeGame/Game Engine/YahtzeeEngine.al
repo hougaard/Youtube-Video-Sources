@@ -1,14 +1,23 @@
-codeunit 54580 "Yahtzee Engine"
+codeunit 54580 Yahtzee
 {
+    procedure EndGame()
+    var
+        YahtzeeGame: Record "Yahtzee Data Game";
+    begin
+        YahtzeeGame := GetGameData();
+        GameRunning := false;
+    end;
+
     procedure NewGame()
     var
-        NewLine: Record "Yahtzee Game Line";
+        NewLine: Record "Yahtzee Data Game Line";
         CombEnum: Enum YahtzeeCombEnum;
     begin
         GameData.GameId := GetNewGameId();
         GameData.Insert();
         GameRunning := true;
 
+        Clear(DiceRound);
         DiceRound.GameId := GameData.GameId;
         DiceRound.Insert();
 
@@ -27,13 +36,16 @@ codeunit 54580 "Yahtzee Engine"
         NewLine.CreateGameLine(GameData.GameId, CombEnum::Yahtzee);
         NewLine.CreateGameLine(GameData.GameId, CombEnum::Chance);
 
-        NewTurn();
+        NewTurn(DiceRound);
     end;
 
-    procedure NewTurn()
+    procedure NewTurn(var GameDice: Record "Yahtzee Data Dice")
     begin
-        DiceRound.TryCount := 0;
-        DiceRound.DiceMarkAll(true);
+        GameDice.TryCount := 0;
+        GameDice.TurnNum += 1;
+        GameDice.DiceMarkAll(true);
+        DiceRound := GameDice;
+        Sleep(1500);
         DiceRollAll();
     end;
 
@@ -47,7 +59,7 @@ codeunit 54580 "Yahtzee Engine"
         exit(NumberSequence.Next(NumSeqName));
     end;
 
-    procedure DiceRollAll(var DiceRoundOnPage: Record "Yahtzee Data Dice Round")
+    procedure DiceRollAll(var DiceRoundOnPage: Record "Yahtzee Data Dice")
     begin
         DiceRound := DiceRoundOnPage;
         DiceRollAll();
@@ -74,7 +86,51 @@ codeunit 54580 "Yahtzee Engine"
         end;
     end;
 
-    procedure GetCombinationPossibleScore(Comb: Enum YahtzeeCombEnum): Integer
+    procedure ApplyScore(var Line: Record "Yahtzee Data Game Line"): Boolean
+    var
+        Applied: Boolean;
+    begin
+        if Line.Combination <> line.Combination::NumRepeatBonus then begin
+            Line.Validate(P1Score, GetPossibleScore(Line.Combination));
+            Line.Modify();
+            Applied := true;
+            if line.Combination.AsInteger() <= line.Combination::NumRepeatSixes.AsInteger() then
+                ApplyScoreBonus();
+            GameData.CalcFields("P1 Score");
+        end;
+        exit(Applied);
+    end;
+
+    procedure ApplyScoreBonus()
+    var
+        UpperBonus: Integer;
+        BonusLine: Record "Yahtzee Data Game Line";
+    begin
+        if IsGameRunning() then begin
+            BonusLine.SetRange(GameId, GetGameData().GameId);
+            BonusLine.SetRange(Combination, BonusLine.Combination::NumRepeatBonus);
+            BonusLine.FindFirst();
+            if not BonusLine.P1Set then begin
+                UpperBonus := GetPossibleScoreForUpperBonus();
+                if UpperBonus > 0 then begin
+                    BonusLine.Validate(P1Score, GetPossibleScoreForUpperBonus());
+                    BonusLine.Modify();
+                end;
+            end;
+        end;
+    end;
+
+    procedure GetHighestScore(): Integer;
+    var
+        AllGames: Record "Yahtzee Data Game";
+    begin
+        // AllGames.SetCurrentKey(GameId, "P1 Score");
+        // AllGames.SetAscending("P1 Score", true);
+        AllGames.FindLast();
+        exit(AllGames."P1 Score");
+    end;
+
+    procedure GetPossibleScore(Comb: Enum YahtzeeCombEnum): Integer
     var
         Scoring: Integer;
     begin
@@ -91,18 +147,20 @@ codeunit 54580 "Yahtzee Engine"
                 Scoring := RoundStatArray[5] * 5;
             Comb::NumRepeatSixes:
                 Scoring := RoundStatArray[6] * 6;
+            Comb::NumRepeatBonus:
+                Scoring := GetPossibleScoreForUpperBonus();
             Comb::ThreeOfAKind:
-                Scoring := GetCombinationPossibleScoreByOccurrences(3);
+                Scoring := GetPossibleScoreByOccurrences(3);
             Comb::FourOfAKind:
-                Scoring := GetCombinationPossibleScoreByOccurrences(4);
+                Scoring := GetPossibleScoreByOccurrences(4);
             Comb::FullHouse:
-                Scoring := GetCombinationPossibleScoreRegex('^[0]{0,4}([2,3])[0]{0,4}([2,3])[0]{0,4}$', 25);
+                Scoring := GetPossibleScoreRegex('^[0]{0,4}([2,3])[0]{0,4}([2,3])[0]{0,4}$', 25);
             Comb::StraightSmall:
-                Scoring := GetCombinationPossibleScoreRegex('[1-2]{4}', 30);
+                Scoring := GetPossibleScoreRegex('[1-2]{4}', 30);
             Comb::StraightLarge:
-                Scoring := GetCombinationPossibleScoreRegex('[1]{5}', 40);
+                Scoring := GetPossibleScoreRegex('[1]{5}', 40);
             Comb::Yahtzee:
-                Scoring := GetCombinationPossibleScoreByOccurrences(5, 50);
+                Scoring := GetPossibleScoreByOccurrences(5, 50);
             Comb::Chance:
                 Scoring := (RoundStatArray[1] * 1) +
                            (RoundStatArray[2] * 2) +
@@ -114,12 +172,12 @@ codeunit 54580 "Yahtzee Engine"
         exit(Scoring);
     end;
 
-    procedure GetCombinationPossibleScoreByOccurrences(NumOfOccurrences: Integer): Integer
+    procedure GetPossibleScoreByOccurrences(NumOfOccurrences: Integer): Integer
     begin
-        exit(GetCombinationPossibleScoreByOccurrences(NumOfOccurrences, 0));
+        exit(GetPossibleScoreByOccurrences(NumOfOccurrences, 0));
     end;
 
-    procedure GetCombinationPossibleScoreByOccurrences(NumOfOccurrences: Integer; DefaultScore: Integer): Integer
+    procedure GetPossibleScoreByOccurrences(NumOfOccurrences: Integer; DefaultScore: Integer): Integer
     var
         iDiceNum: Integer;
         Scoring: Integer;
@@ -134,7 +192,22 @@ codeunit 54580 "Yahtzee Engine"
         exit(Scoring);
     end;
 
-    procedure GetCombinationPossibleScoreRegex(RegexPattern: Text; FixedScore: Integer): Integer
+    procedure GetPossibleScoreForUpperBonus(): Integer
+    var
+        YahtzeeGame: Record "Yahtzee Data Game";
+        Bonus, MinOfPoints, SumOfPoints : Integer;
+    begin
+        YahtzeeGame := GetGameData();
+        YahtzeeGame.CalcFields("P1 Sum Of Upper Points");
+        MinOfPoints := 10;//63;
+        SumOfPoints := YahtzeeGame."P1 Sum Of Upper Points";
+        Bonus := SumOfPoints - MinOfPoints;
+        if Bonus >= 0 then
+            Bonus := 35;
+        exit(Bonus);
+    end;
+
+    procedure GetPossibleScoreRegex(RegexPattern: Text; FixedScore: Integer): Integer
     var
         Regex: Codeunit Regex;
         RegexMatches: Record Matches;
@@ -168,7 +241,7 @@ codeunit 54580 "Yahtzee Engine"
         exit(Scoring);
     end;
 
-    procedure GetDiceRoundData(): Record "Yahtzee Data Dice Round"
+    procedure GetDiceRoundData(): Record "Yahtzee Data Dice"
     begin
         exit(DiceRound);
     end;
@@ -178,7 +251,7 @@ codeunit 54580 "Yahtzee Engine"
         CalcDiceRoundStatistics(DiceRound);
     end;
 
-    procedure CalcDiceRoundStatistics(var GameDice: Record "Yahtzee Data Dice Round")
+    procedure CalcDiceRoundStatistics(var GameDice: Record "Yahtzee Data Dice")
     var
         DiceVal: Integer;
         iDice: Integer;
@@ -197,7 +270,7 @@ codeunit 54580 "Yahtzee Engine"
         end;
     end;
 
-    procedure GetGameData(): Record "Yahtzee Game"
+    procedure GetGameData(): Record "Yahtzee Data Game"
     begin
         exit(GameData);
     end;
@@ -227,10 +300,10 @@ codeunit 54580 "Yahtzee Engine"
 
     var
         GameRunning: Boolean;
-        GameData: Record "Yahtzee Game";
-        GameDataLine: Record "Yahtzee Game Line";
-        DiceRound: Record "Yahtzee Data Dice Round";
-        Dice: Codeunit "Dice 06";
+        GameData: Record "Yahtzee Data Game";
+        GameDataLine: Record "Yahtzee Data Game Line";
+        DiceRound: Record "Yahtzee Data Dice";
+        Dice: Codeunit "Dice Six-Sided";
         RoundStatArray: Array[6] of Integer;
         RoundStatStr: Text[6];
 }

@@ -3,7 +3,7 @@ page 54581 "Yahtzee Line Part"
     PageType = ListPart;
     ApplicationArea = All;
     UsageCategory = Tasks;
-    SourceTable = "Yahtzee Game Line";
+    SourceTable = "Yahtzee Data Game Line";
 
     layout
     {
@@ -31,10 +31,12 @@ page 54581 "Yahtzee Line Part"
                     {
                         ApplicationArea = All;
                         Caption = 'Player 1';
+                        Style = Favorable;
+                        StyleExpr = Rec.P1Set;
 
                         trigger OnDrillDown()
                         begin
-                            ApplyDiceToCombination(Rec);
+                            ApplyDiceToCombination();
                         end;
                     }
                 }
@@ -42,16 +44,15 @@ page 54581 "Yahtzee Line Part"
         }
     }
 
-    procedure ApplyDiceToCombination(Line: Record "Yahtzee Game Line")
-    var
+    procedure ApplyDiceToCombination()
     begin
-        Line.Validate(P1Score, Engine.GetCombinationPossibleScore(Line.Combination));
-        Line.Modify();
-        ChanceApplied := true;
-        CurrPage.Update();
+        if Engine.ApplyScore(Rec) then begin
+            ChanceApplied := true;
+            CurrPage.Update();
+        end;
     end;
 
-    local procedure GetScore(Line: Record "Yahtzee Game Line"; PlayerNum: Integer): Text
+    local procedure GetScore(Line: Record "Yahtzee Data Game Line"; PlayerNum: Integer): Text
     var
         PossibleScore: Integer;
         Score: Text;
@@ -60,8 +61,8 @@ page 54581 "Yahtzee Line Part"
             Score := Format(Line.P1Score)
         else begin
             Score := '...';
-            PossibleScore := Engine.GetCombinationPossibleScore(Line.Combination);
-            if PossibleScore > 0 then
+            PossibleScore := Engine.GetPossibleScore(Line.Combination);
+            if PossibleScore <> 0 then
                 Score := StrSubstNo('... (%1)', PossibleScore);
         end;
         exit(Score);
@@ -72,7 +73,7 @@ page 54581 "Yahtzee Line Part"
         exit(ChanceApplied);
     end;
 
-    procedure OnDiceRolled(var GameEngine: Codeunit "Yahtzee Engine")
+    procedure OnDiceRolled(var GameEngine: Codeunit Yahtzee)
     var
     begin
         Engine := GameEngine;
@@ -81,7 +82,7 @@ page 54581 "Yahtzee Line Part"
     end;
 
     var
-        Engine: Codeunit "Yahtzee Engine";
+        Engine: Codeunit Yahtzee;
         [InDataSet]
         ChanceApplied: Boolean;
 

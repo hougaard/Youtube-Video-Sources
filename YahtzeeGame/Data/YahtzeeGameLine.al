@@ -1,11 +1,11 @@
-table 54581 "Yahtzee Game Line"
+table 54581 "Yahtzee Data Game Line"
 {
 
     fields
     {
         field(1; GameId; Integer)
         {
-            TableRelation = "Yahtzee Game".GameId;
+            TableRelation = "Yahtzee Data Game".GameId;
         }
         field(2; Combination; Enum YahtzeeCombEnum)
         {
@@ -41,7 +41,7 @@ table 54581 "Yahtzee Game Line"
 
     procedure CreateGameLine(GameId: Integer; Combination: Enum YahtzeeCombEnum)
     var
-        NewLine: Record "Yahtzee Game Line";
+        NewLine: Record "Yahtzee Data Game Line";
     begin
         NewLine.GameId := GameId;
         NewLine.Combination := Combination;

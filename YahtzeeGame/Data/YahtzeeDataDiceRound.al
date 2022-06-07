@@ -1,4 +1,4 @@
-table 54582 "Yahtzee Data Dice Round"
+table 54582 "Yahtzee Data Dice"
 {
     DataCaptionFields = GameId;
 
@@ -6,7 +6,7 @@ table 54582 "Yahtzee Data Dice Round"
     {
         field(1; GameId; Integer)
         {
-            TableRelation = "Yahtzee Game".GameId;
+            TableRelation = "Yahtzee Data Game".GameId;
         }
         field(2; TryCount; Integer)
         {
@@ -77,6 +77,10 @@ table 54582 "Yahtzee Data Dice Round"
         {
             Caption = 'Dice 5 (Marked)';
         }
+        field(18; TurnNum; Integer)
+        {
+            Caption = 'No. of Dice Turn';
+        }
     }
 
     keys
@@ -127,6 +131,11 @@ table 54582 "Yahtzee Data Dice Round"
     procedure DiceRoundDisplay(): Text
     begin
         exit(StrSubstNo('%1/3', TryCount));
+    end;
+
+    procedure DiceTurnDisplay(): Text
+    begin
+        exit(StrSubstNo('%1/13', TurnNum));
     end;
 
     procedure IsDiceMarked(DiceIdx: Integer): Boolean

@@ -1,4 +1,4 @@
-table 54580 "Yahtzee Game"
+table 54580 "Yahtzee Data Game"
 {
 
     fields
@@ -12,6 +12,17 @@ table 54580 "Yahtzee Game"
         }
         field(3; "P1 Score"; Integer)
         {
+            Caption = 'Score';
+            FieldClass = FlowField;
+            CalcFormula = sum("Yahtzee Data Game Line".P1Score where(GameId = field(GameId),
+                                                                     P1Set = filter(true)));
+        }
+        field(4; "P1 Sum Of Upper Points"; Integer)
+        {
+            FieldClass = FlowField;
+            CalcFormula = sum("Yahtzee Data Game Line".P1Score where(GameId = field(GameId),
+                                                                     P1Set = filter(true),
+                                                                     Combination = filter(0 .. 5)));
         }
     }
 
@@ -44,5 +55,6 @@ table 54580 "Yahtzee Game"
     begin
 
     end;
+
 
 }
