@@ -1,11 +1,10 @@
 codeunit 54580 Yahtzee
 {
     procedure EndGame()
-    var
-        YahtzeeGame: Record "Yahtzee Data Game";
     begin
-        YahtzeeGame := GetGameData();
         GameRunning := false;
+        UpdateBestScore(GameData);
+        Message('Final score: %1', GetGameData()."P1 Score");
     end;
 
     procedure NewGame()
@@ -13,6 +12,8 @@ codeunit 54580 Yahtzee
         NewLine: Record "Yahtzee Data Game Line";
         CombEnum: Enum YahtzeeCombEnum;
     begin
+        GameSetup := GameSetup.FindOrCreate();
+
         GameData.GameId := GetNewGameId();
         GameData.Insert();
         GameRunning := true;
@@ -35,47 +36,78 @@ codeunit 54580 Yahtzee
         NewLine.CreateGameLine(GameData.GameId, CombEnum::StraightLarge);
         NewLine.CreateGameLine(GameData.GameId, CombEnum::Yahtzee);
         NewLine.CreateGameLine(GameData.GameId, CombEnum::Chance);
+        Commit();
 
         NewTurn(DiceRound);
     end;
 
     procedure NewTurn(var GameDice: Record "Yahtzee Data Dice")
     begin
-        GameDice.TryCount := 0;
-        GameDice.TurnNum += 1;
-        GameDice.DiceMarkAll(true);
-        DiceRound := GameDice;
-        Sleep(1500);
-        DiceRollAll();
+        if GameDice.TurnNum < 13 then begin
+            GameDice.TryCount := 0;
+            GameDice.TurnNum += 1;
+            GameDice.DiceMarkAll(true);
+            DiceRound := GameDice;
+            Sleep(1500);
+            DiceRollAll();
+        end
+        else
+            EndGame();
+    end;
+
+    procedure ClearGameHistory()
+    var
+        Games: Record "Yahtzee Data Game";
+    begin
+        Games.DeleteAll(true);
+        NumberSequence.Delete(GameId_NumSeq());
+        GetGameSetup();
+        GameSetup."Highest score" := 0;
+        GameSetup.Modify();
     end;
 
     local procedure GetNewGameId(): Integer
     var
-        NumSeqName: Text[20];
     begin
-        NumSeqName := 'YahtzeeGameId';
-        if not NumberSequence.Exists(NumSeqName) then
-            NumberSequence.Insert(NumSeqName, 1);
-        exit(NumberSequence.Next(NumSeqName));
+        if not NumberSequence.Exists(GameId_NumSeq) then
+            NumberSequence.Insert(GameId_NumSeq, 1);
+        exit(NumberSequence.Next(GameId_NumSeq));
     end;
 
-    procedure DiceRollAll(var DiceRoundOnPage: Record "Yahtzee Data Dice")
+    procedure GameId_NumSeq(): Text[20]
+    var
+        myInt: Integer;
     begin
-        DiceRound := DiceRoundOnPage;
-        DiceRollAll();
-        DiceRoundOnPage := DiceRound;
+        exit('YahtzeeGameId');
     end;
 
-    local procedure DiceRollAll()
-        DiceIdx: Integer;
+    procedure DiceRollAll(var DiceRoundOnPage: Record "Yahtzee Data Dice"): Boolean
+    var
+        RollOk: Boolean;
     begin
-        for DiceIdx := 1 to 5 do begin
-            DiceRoll(DiceIdx);
+        if DiceRoundOnPage.ValidateAnyDiceMarked() then begin
+            DiceRound := DiceRoundOnPage;
+            DiceRollAll();
+            DiceRoundOnPage := DiceRound;
         end;
-        DiceRound.TryCount += 1;
-        // Unmark Dice
-        DiceRound.DiceMarkAll(false);
-        CalcDiceRoundStatistics();
+        exit(RollOk);
+    end;
+
+    local procedure DiceRollAll(): Boolean
+    var
+        DiceIdx: Integer;
+        RollOk: Boolean;
+    begin
+        if DiceRound.ValidateAnyDiceMarked() then begin
+            for DiceIdx := 1 to 5 do begin
+                DiceRoll(DiceIdx);
+            end;
+            DiceRound.TryCount += 1;
+            // Unmark Dice
+            DiceRound.DiceMarkAll(false);
+            CalcDiceRoundStatistics();
+        end;
+        exit(RollOk);
     end;
 
     local procedure DiceRoll(DiceIdx: Integer)
@@ -98,6 +130,7 @@ codeunit 54580 Yahtzee
                 ApplyScoreBonus();
             GameData.CalcFields("P1 Score");
         end;
+        UpdateBestScore(GameData);
         exit(Applied);
     end;
 
@@ -122,17 +155,15 @@ codeunit 54580 Yahtzee
 
     procedure GetHighestScore(): Integer;
     var
-        AllGames: Record "Yahtzee Data Game";
     begin
-        // AllGames.SetCurrentKey(GameId, "P1 Score");
-        // AllGames.SetAscending("P1 Score", true);
-        AllGames.FindLast();
-        exit(AllGames."P1 Score");
+        GetGameSetup();
+        exit(GameSetup."Highest score");
     end;
 
     procedure GetPossibleScore(Comb: Enum YahtzeeCombEnum): Integer
     var
         Scoring: Integer;
+        FullHouseScore: Integer;
     begin
         case Comb of
             Comb::NumRepeatOnes:
@@ -154,7 +185,11 @@ codeunit 54580 Yahtzee
             Comb::FourOfAKind:
                 Scoring := GetPossibleScoreByOccurrences(4);
             Comb::FullHouse:
-                Scoring := GetPossibleScoreRegex('^[0]{0,4}([2,3])[0]{0,4}([2,3])[0]{0,4}$', 25);
+                begin
+                    if not GameSetup."Full-house for dice-price" then
+                        FullHouseScore := 25;
+                    Scoring := GetPossibleScoreRegex('^[0]{0,4}([2,3])[0]{0,4}([2,3])[0]{0,4}$', FullHouseScore);
+                end;
             Comb::StraightSmall:
                 Scoring := GetPossibleScoreRegex('[1-2]{4}', 30);
             Comb::StraightLarge:
@@ -199,7 +234,7 @@ codeunit 54580 Yahtzee
     begin
         YahtzeeGame := GetGameData();
         YahtzeeGame.CalcFields("P1 Sum Of Upper Points");
-        MinOfPoints := 10;//63;
+        MinOfPoints := 63;
         SumOfPoints := YahtzeeGame."P1 Sum Of Upper Points";
         Bonus := SumOfPoints - MinOfPoints;
         if Bonus >= 0 then
@@ -270,6 +305,13 @@ codeunit 54580 Yahtzee
         end;
     end;
 
+    procedure GetGameSetup(): Record "Yahtzee Data Setup"
+    begin
+        if not GameSetup.Get() then
+            GameSetup := GameSetup.FindOrCreate();
+        exit(GameSetup);
+    end;
+
     procedure GetGameData(): Record "Yahtzee Data Game"
     begin
         exit(GameData);
@@ -278,6 +320,22 @@ codeunit 54580 Yahtzee
     procedure IsGameRunning(): Boolean
     begin
         exit(GameRunning);
+    end;
+
+    local procedure UpdateBestScore(var CurrGame: Record "Yahtzee Data Game")
+    var
+        BestScore: Integer;
+    begin
+        GetGameSetup();
+        BestScore := GameSetup."Highest score";
+        if BestScore = 0 then
+            BestScore := CurrGame.CalcHighestScore();
+        if BestScore < CurrGame."P1 Score" then
+            BestScore := CurrGame."P1 Score";
+        if GameSetup."Highest score" < BestScore then begin
+            GameSetup.Validate("Highest score", BestScore);
+            GameSetup.Modify();
+        end;
     end;
 
     procedure updateDiceRound(DiceIdx: Integer; DiceValue: Integer; Img64: Text)
@@ -298,8 +356,15 @@ codeunit 54580 Yahtzee
         RecRef.SetTable(DiceRound);
     end;
 
+    trigger OnRun()
+    var
+    begin
+        GameSetup := GameSetup.FindOrCreate();
+    end;
+
     var
         GameRunning: Boolean;
+        GameSetup: Record "Yahtzee Data Setup";
         GameData: Record "Yahtzee Data Game";
         GameDataLine: Record "Yahtzee Data Game Line";
         DiceRound: Record "Yahtzee Data Dice";

@@ -56,11 +56,12 @@ table 54581 "Yahtzee Data Game Line"
     procedure GetCombinationToolTip(Comb: Enum YahtzeeCombEnum): Text[100]
     var
         ToolTip: Text[100];
-        LabelSumOf, LabelHigherBetter, LabelPoints : Text[40];
+        LabelSumOf, LabelHigherBetter, LabelPoints, LabelSeeOptions : Text[40];
     begin
         LabelSumOf := 'Sum of %1.';
         LabelHigherBetter := ' Higher number is better.';
-        LabelPoints := '%1 points';
+        LabelPoints := '%1 points.';
+        LabelSeeOptions := ' (See options)';
         case Comb of
             Comb::NumRepeatOnes:
                 ToolTip := StrSubstNo(LabelSumOf, Comb);
@@ -81,7 +82,7 @@ table 54581 "Yahtzee Data Game Line"
             Comb::FourOfAKind:
                 ToolTip := StrSubstNo(LabelSumOf, '4 equal dice') + LabelHigherBetter;
             Comb::FullHouse:
-                ToolTip := StrSubstNo(LabelPoints, 25);
+                ToolTip := StrSubstNo(LabelPoints, '25 or Dice') + LabelSeeOptions;
             Comb::StraightSmall:
                 ToolTip := StrSubstNo(LabelPoints, 30);
             Comb::StraightLarge:

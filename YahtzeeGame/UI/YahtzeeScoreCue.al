@@ -29,15 +29,15 @@ page 54582 "Yahtzee Score Part"
         }
     }
 
-    trigger OnOpenPage()
+    trigger OnAfterGetCurrRecord()
     var
         Engine: Codeunit Yahtzee;
     begin
-        if BestScore = 0 then
-            BestScore := Engine.GetHighestScore();
+        BestScore := Engine.GetHighestScore();
     end;
 
     var
+        [InDataSet]
         BestScore: Integer;
 
 }

@@ -34,6 +34,20 @@ table 54580 "Yahtzee Data Game"
         }
     }
 
+    procedure CalcHighestScore(): Integer
+    var
+        Games: Record "Yahtzee Data Game";
+        BestScore: Integer;
+    begin
+        Games.SetAutoCalcFields("P1 Score");
+        if Games.FindSet() then
+            repeat
+                if games."P1 Score" > BestScore then
+                    BestScore := Games."P1 Score";
+            until Games.Next() = 0;
+        exit(BestScore);
+    end;
+
     var
 
     trigger OnInsert()
@@ -47,8 +61,15 @@ table 54580 "Yahtzee Data Game"
     end;
 
     trigger OnDelete()
+    var
+        GameLines: Record "Yahtzee Data Game Line";
+        GameRound: Record "Yahtzee Data Dice";
     begin
+        GameLines.SetRange(GameId, Rec.GameId);
+        GameLines.DeleteAll();
 
+        GameRound.SetRange(GameId, GameId);
+        GameRound.DeleteAll();
     end;
 
     trigger OnRename()

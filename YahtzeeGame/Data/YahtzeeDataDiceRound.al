@@ -138,6 +138,16 @@ table 54582 "Yahtzee Data Dice"
         exit(StrSubstNo('%1/13', TurnNum));
     end;
 
+    procedure ValidateAnyDiceMarked(): Boolean
+    var
+        AnyMarked: Boolean;
+    begin
+        AnyMarked := (Dice1Mark or Dice2Mark or Dice3Mark or Dice4Mark or Dice5Mark);
+        if not AnyMarked then
+            Error('At least a dice should be marked to roll');
+        exit(AnyMarked);
+    end;
+
     procedure IsDiceMarked(DiceIdx: Integer): Boolean
     var
         IsMarked: Boolean;

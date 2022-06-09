@@ -8,8 +8,6 @@ page 54580 Yahtzee
     RefreshOnActivate = true;
     DataCaptionExpression = StrSubstNo('Game %1', Rec.GameId);
     UsageCategory = Tasks;
-    Editable = true;
-    ApplicationArea = All;
 
     layout
     {
@@ -129,14 +127,14 @@ page 54580 Yahtzee
                     //Visible = GameRunning;
                     field(DiceTurnNumFld; Rec.DiceTurnDisplay())
                     {
-                        ShowCaption = false;
+                        Caption = 'Turn';
                         ToolTip = 'Num of Game Turn';
                         ApplicationArea = All;
                         Style = Subordinate;
                     }
                     field(DiceRoundCountFld; Rec.DiceRoundDisplay())
                     {
-                        ShowCaption = false;
+                        Caption = 'Dice round';
                         ApplicationArea = All;
                         Style = Unfavorable;
                         StyleExpr = not CanRollDice;
@@ -144,7 +142,10 @@ page 54580 Yahtzee
                     field(DiceRollActionFld; ActionLabelDiceRoll)
                     {
                         ShowCaption = false;
+                        ToolTip = 'Roll all Marked Dice';
                         ApplicationArea = All;
+                        Style = StrongAccent;
+                        StyleExpr = CanRollDice;
                         Enabled = CanRollDice;
 
                         trigger OnDrillDown()
@@ -169,36 +170,43 @@ page 54580 Yahtzee
                     field(Occurences1; occurCount(1))
                     {
                         ApplicationArea = All;
+                        Style = Strong;
                         Caption = '1';
                     }
                     field(Occurences2; occurCount(2))
                     {
                         ApplicationArea = All;
+                        Style = Strong;
                         Caption = '2';
                     }
                     field(Occurences3; occurCount(3))
                     {
                         ApplicationArea = All;
+                        Style = Strong;
                         Caption = '3';
                     }
                     field(Occurences4; occurCount(4))
                     {
                         ApplicationArea = All;
+                        Style = Strong;
                         Caption = '4';
                     }
                     field(Occurences5; occurCount(5))
                     {
                         ApplicationArea = All;
+                        Style = Strong;
                         Caption = '5';
                     }
                     field(Occurences6; occurCount(6))
                     {
                         ApplicationArea = All;
+                        Style = Strong;
                         Caption = '6';
                     }
                     field(StatTotalFld; StatTotal())
                     {
                         ApplicationArea = All;
+                        Style = Strong;
                         Caption = 'Total';
                     }
                 }
@@ -257,13 +265,26 @@ page 54580 Yahtzee
                 ToolTip = 'Rolls the dice a 100 times to count occurrences of each number';
                 ApplicationArea = all;
                 Image = StatisticsGroup;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = false;
-                PromotedOnly = false;
+
                 trigger OnAction()
                 begin
                     runStatTest();
+                end;
+            }
+            action(GameOptions)
+            {
+                ApplicationArea = All;
+                Caption = 'Game options';
+                ToolTip = 'Small setup options for the game rules. It stays Disabled while a game is running';
+                Image = Setup;
+                //Enabled = (GameRunning = false);
+
+                trigger OnAction()
+                var
+                    SetupDialog: Page "Yahtzee setup";
+                begin
+                    if SetupDialog.RunModal() = Action::OK then
+                        SetupDialog.SaveSetup();
                 end;
             }
         }
@@ -332,8 +353,9 @@ page 54580 Yahtzee
     trigger OnOpenPage()
     begin
         Randomize();
-        CurrPage.Editable(true);
-        Clear(Rec);
+        if not Rec.Get(0) then
+            Rec.Insert();
+        //CurrPage.Editable(true);
         UpdPageState();
     end;
 
