@@ -41,6 +41,13 @@ codeunit 54580 Yahtzee
         NewTurn(DiceRound);
     end;
 
+    procedure ResetGame()
+    begin
+        GameData.Reset();
+        DiceRound.Reset();
+        GameRunning := false;
+    end;
+
     procedure NewTurn(var GameDice: Record "Yahtzee Data Dice")
     begin
         if GameDice.TurnNum < 13 then begin

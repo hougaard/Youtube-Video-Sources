@@ -46,6 +46,11 @@ page 54583 "Yahtzee setup"
         }
     }
 
+    procedure CleanupWasDone(): Boolean
+    begin
+        exit(CleanupDone);
+    end;
+
     procedure SaveSetup()
     var
     begin

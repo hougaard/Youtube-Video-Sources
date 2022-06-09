@@ -29,6 +29,13 @@ page 54582 "Yahtzee Score Part"
         }
     }
 
+    trigger OnOpenPage()
+    var
+        Engine: Codeunit Yahtzee;
+    begin
+        BestScore := Engine.GetHighestScore();
+    end;
+
     trigger OnAfterGetCurrRecord()
     var
         Engine: Codeunit Yahtzee;

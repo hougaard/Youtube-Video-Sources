@@ -285,6 +285,8 @@ page 54580 Yahtzee
                 begin
                     if SetupDialog.RunModal() = Action::OK then
                         SetupDialog.SaveSetup();
+                    if SetupDialog.CleanupWasDone() then
+                        ResetPage();
                 end;
             }
         }
@@ -345,18 +347,22 @@ page 54580 Yahtzee
         Rec := Engine.GetDiceRoundData();
         CurrGameId := Engine.GetGameData().GameId;
         DiceRoundNum := Rec.TryCount;
-        CanRollDice := (DiceRoundNum > 0) AND (DiceRoundNum < 3);
         GameRunning := Engine.IsGameRunning();
+        CanRollDice := GameRunning AND (DiceRoundNum > 0) AND (DiceRoundNum < 3);
         CurrPage.GameLinePart.Page.OnDiceRolled(Engine);
+    end;
+
+    local procedure ResetPage()
+    begin
+        Engine.ResetGame();
+        UpdPageState();
     end;
 
     trigger OnOpenPage()
     begin
         Randomize();
-        if not Rec.Get(0) then
-            Rec.Insert();
-        //CurrPage.Editable(true);
-        UpdPageState();
+        ResetPage();
+        CurrPage.Editable(true);
     end;
 
     trigger OnAfterGetCurrRecord()
