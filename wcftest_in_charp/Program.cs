@@ -16,8 +16,8 @@ namespace wcftest_in_charp
         static void Main(string[] args)
         {
             wcftest_PortClient portClient = new wcftest_PortClient();
-            //portClient.ClientCredentials.UserName.UserName = "erik";
-            //portClient.ClientCredentials.UserName.Password = "0+1V4IZRPtYW1pf4IX9lFFjuvHHFo769pxY5IRioS9A=";
+            portClient.ClientCredentials.UserName.UserName = "erik";
+            portClient.ClientCredentials.UserName.Password = "0+1V4IZRPtYW1pf4IX9lFFjuvHHFo769pxY5IRioS9A=";
 
             portClient.Endpoint.EndpointBehaviors.Add(new AddAuthTokenEndpointBehavior(GetToken().Result));
             
