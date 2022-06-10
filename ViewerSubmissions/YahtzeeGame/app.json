@@ -1,0 +1,29 @@
+{
+  "id": "545a34f1-2051-4b76-a5d1-10fdc1d01294",
+  "name": "YahtzeeGame",
+  "publisher": "Hugo Alves",
+  "version": "0.8.4.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 54500,
+      "to": 54599
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "9.0"
+}
