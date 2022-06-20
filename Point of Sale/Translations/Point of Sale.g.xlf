@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="Point of Sale">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 3330040965 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>POS Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table POS Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3330040965 - Field 1128980479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cash Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table POS Setup - Field Cash Customer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3330040965 - Field 807881109 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>POSKEY</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table POS Setup - Field POSKEY - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Property 1064389655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Welcome to Point of Sale</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Property AboutTitle</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Property 247559172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You can start scanning item from this screen to quickly sell a lot of stuff in your nice shop.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Property AboutText</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Point of Sale</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Control 3471137671 - Property 1064389655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receipt Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Control Lines - Property AboutTitle</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Control 3471137671 - Property 247559172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Here are all the items on the receipt that has been entered or scanned.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Control Lines - Property AboutText</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Control 1474036805 - Property 1064389655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specify the customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Control Sell-to Customer Name - Property AboutTitle</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Control 1474036805 - Property 247559172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>If your're not selling with cash payment, then you can specify a customer here</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Control Sell-to Customer Name - Property AboutText</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Control 513339096 - Property 1064389655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receipt Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Control Status - Property AboutTitle</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Control 513339096 - Property 247559172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Here you can see if you have an active receipt.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Control Status - Property AboutText</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Control 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Control Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Control 245426702 - Property 1064389655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receipt Totals</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Control Total - Property AboutTitle</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Control 245426702 - Property 247559172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Here you can check the total of the receipt during entry and scanning.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Control Total - Property AboutText</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Action 1022688722 - Property 1064389655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start a new receipt</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Action NewReceiptAction - Property AboutTitle</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Action 1022688722 - Property 247559172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Click here to start a new receipt, or you can just start scanning if you have a scanner.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Action NewReceiptAction - Property AboutText</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Action 1022688722 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New Receipt</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Action NewReceiptAction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Action 2020016226 - Property 1064389655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receive Payment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Action PayAction - Property AboutTitle</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Action 2020016226 - Property 247559172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Click "Pay" to receive payment from the customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Action PayAction - Property AboutText</note>
+        </trans-unit>
+        <trans-unit id="Page 4226980658 - Action 2020016226 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Point of sale - Action PayAction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 122796491 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page POS Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 122796491 - Control 2704404533 - Property 1064389655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page POS Lines - Control Quantity - Property AboutTitle</note>
+        </trans-unit>
+        <trans-unit id="Page 122796491 - Control 2704404533 - Property 247559172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>If you're scanning the same item twice, it will update the existing line with a larger quantity instead of adding a new line.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page POS Lines - Control Quantity - Property AboutText</note>
+        </trans-unit>
+        <trans-unit id="Page 122796491 - Action 4182301777 - Property 1064389655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIP Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page POS Lines - Action VIP - Property AboutTitle</note>
+        </trans-unit>
+        <trans-unit id="Page 122796491 - Action 4182301777 - Property 247559172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specify if this is a VIP customer!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page POS Lines - Action VIP - Property AboutText</note>
+        </trans-unit>
+        <trans-unit id="Page 122796491 - Action 4182301777 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIP</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page POS Lines - Action VIP - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 826831670 - Control 1650118938 - Property 1064389655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remember TAX</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page POS Receipt Total - Control Amount Including VAT - Property AboutTitle</note>
+        </trans-unit>
+        <trans-unit id="Page 826831670 - Control 1650118938 - Property 247559172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This total is including vat/tax/moms/gst/pst/hst</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page POS Receipt Total - Control Amount Including VAT - Property AboutText</note>
+        </trans-unit>
+        <trans-unit id="Page 3330040965 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>POS Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page POS Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2500762320 - Action 3732224266 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4043066029">
+          <source>Test</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Something new - Action Test - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3566004263 - Field 1863350370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3566004263">
+          <source>POS Payment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Payment Method - Field POS Payment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 2355543019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Point of sale admin</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet Point Of Sale Admin - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 2597873889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Point of sale user</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet Point Of Sale User - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 732876980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>POS GL</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet POS G/L - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 591987031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>POS Setup Admin</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet POS Setup (Admin) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 1080452628 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>POS Setup Read</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet POS Setup (read) - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
