@@ -1,0 +1,16 @@
+{
+    "name": "PTE",
+    "description": "PTE Specific ruleset",
+    "rules": [
+        {
+            "id": "PTE0001",
+            "action": "Hidden",
+            "justification": "Object ID must be in free range. # Bug in LicenseFile"
+        },
+        {
+            "id": "PTE0002",
+            "action": "Hidden",
+            "justification": "Field ID must be in free range. # Bug in LicenseFile"
+        }
+    ]
+}

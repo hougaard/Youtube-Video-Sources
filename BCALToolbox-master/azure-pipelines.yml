@@ -1,0 +1,70 @@
+name: $(Date:yyyyMMdd)$(Rev:.r)
+
+trigger:
+ branches:
+   include:
+     - master
+
+strategy:
+  matrix:
+    'Compile Against W1 - Current Version':
+      artifactCountry: 'w1'
+      artifactVersion: 'Current'
+    'Compile Against W1 - Next Minor':
+      artifactCountry: 'w1'
+      artifactVersion: 'NextMinor'
+    'Compile Against W1 - Next Major':
+      artifactCountry: 'w1'
+      artifactVersion: 'NextMajor'
+    'Compile Against United States - Current Version':
+      artifactCountry: 'us'
+      artifactVersion: 'Current'
+    'Compile Against United States - Next Minor':
+      artifactCountry: 'us'
+      artifactVersion: 'NextMinor'
+    'Compile Against United States - Next Major':
+      artifactCountry: 'us'
+      artifactVersion: 'NextMajor'
+
+pool: Helgesen Build
+
+variables:
+- group: Secrets
+
+schedules:
+- cron: '0 0 * * *'
+  displayName: Daily Midnight ALOps Compile against Current, Next Minor, and Next Major
+  branches:
+    include:
+    - master
+  always: true
+
+steps:
+- checkout: self
+  clean: true 
+
+- task: ALOpsAgentMaintenance@1
+  displayName: 'ALOps Agent Maintenance'
+  inputs:
+    removeoldtasks: False                        # Remove old ALOps tasks. $(removeoldtasks)
+    removeunusedcontainers: False                # Force docker container pruning. $(removeunusedcontainers)
+    pruneimagesdayscreated: 0                    # Force docker image pruning based on creation date (x days). $(pruneimagesdayscreated)
+    pruneimagesosbased: True                     # Prune images based on old OS. $(pruneimagesosbased)
+    removebcartifacts: True                      # Remove BC Artifacts. $(removebcartifacts)
+    bcartifactscachefolder: C:\bcartifacts.cache # Set non-default BC Artifact Cache folder. $(bcartifactscachefolder)
+    daysunused: 3                                # Define date-range for cleanup BC-Artifacts. $(daysunused)
+    
+# This compiler (v2) is not going to use a docker container, but it's going to use the artifacts that you specify in the parameters
+# The compiler will "Batch Compile", meaning: it will compile everything in the workingfolder
+
+- task: ALOpsAppCompiler@2
+  displayName: 'Compile $(Build.Repository.Name)'
+  inputs:  
+    artifacttype: 'Sandbox'
+    artifactcountry: '$(artifactCountry)'
+    versionselect: '$(artifactVersion)'
+    appversiontemplate: '?.?.*.0'
+    alcodeanalyzer: UICop,CodeCop,PerTenantExtensionCop
+    failonwarnings: true
+    publishartifact: false
+    sastoken: $(bc.sastoken)

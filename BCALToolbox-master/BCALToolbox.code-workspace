@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"path": "app"
+		},
+		{
+			"path": "test"
+		},
+		{
+			"path": "scripts"
+		},
+		{
+			"path": ".github"
+		},
+		{
+			"path": ".azureDevOps"
+		}
+	],
+	"settings": {
+		"CRS.ObjectNameSuffix": "TBHLG",
+		"CRS.OnSaveAlFileAction": "Rename",
+		"al.compilationOptions": {
+		"parallel": true
+		},
+		"al.enableCodeAnalysis": true,
+		"al.backgroundCodeAnalysis": true,
+		"al.codeAnalyzers": [
+		"${CodeCop}", "${UICop}", "${PerTenantExtensionCop}"
+		],
+	}
+}

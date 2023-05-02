@@ -1,7 +1,7 @@
 {
-  "id": "9bd96851-0dd2-4c98-8d3a-a4a982e89ebb",
-  "name": "JobRestarter",
-  "publisher": "Erik Hougaard",
+  "id": "e173c79f-3cca-4c33-9996-864f9ef50454",
+  "name": "ActionErrors",
+  "publisher": "Default publisher",
   "version": "1.0.0.0",
   "brief": "",
   "description": "",
@@ -13,11 +13,11 @@
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "21.0.0.0",
+  "application": "22.0.0.0",
   "idRanges": [
     {
-      "from": 54600,
-      "to": 54649
+      "from": 50100,
+      "to": 50149
     }
   ],
   "resourceExposurePolicy": {
@@ -25,7 +25,7 @@
     "allowDownloadingSource": true,
     "includeSourceInSymbolFile": true
   },
-  "runtime": "10.0",
+  "runtime": "11.0",
   "features": [
     "NoImplicitWith"
   ]

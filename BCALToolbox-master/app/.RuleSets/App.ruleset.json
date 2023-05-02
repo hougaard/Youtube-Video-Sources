@@ -1,0 +1,14 @@
+{
+    "name": "App Ruleset",
+    "description": "Rules Sets for App",
+    "includedRuleSets": [
+        {
+            "action": "Default",
+            "path": "./pte.ruleset.json"
+        },
+        {
+            "action": "Default",
+            "path": "./TheDoubleH.ruleset.json"
+        }
+    ]
+}

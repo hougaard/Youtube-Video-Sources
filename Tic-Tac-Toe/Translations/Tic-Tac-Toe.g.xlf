@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="Tic-Tac-Toe">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 858725194 - Field 2600721181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>B1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TTT Board - Field B1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 858725194 - Field 1963024564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>B2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TTT Board - Field B2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 858725194 - Field 1325327947 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>B3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TTT Board - Field B3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 858725194 - Field 687631330 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>B4</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TTT Board - Field B4 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 858725194 - Field 49934713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>B5</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TTT Board - Field B5 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 858725194 - Field 3707205392 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>B6</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TTT Board - Field B6 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 858725194 - Field 3069508775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>B7</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TTT Board - Field B7 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 858725194 - Field 2431812158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>B8</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TTT Board - Field B8 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 858725194 - Field 1794115541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>B9</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TTT Board - Field B9 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 858725194 - Field 2542794289 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PKEY</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TTT Board - Field PKEY - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 201881077 - Control 1035811460 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Let's play, you know the rules!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Instructions - Control i1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 179549490 - Action 3045047774 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start a new game!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Tic-Tac-Toe - Action HostNewGame - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 179549490 - Action 3045047774 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New game</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Tic-Tac-Toe - Action HostNewGame - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

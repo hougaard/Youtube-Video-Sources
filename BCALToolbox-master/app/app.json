@@ -1,0 +1,28 @@
+{
+    "id":  "5b18d914-89ed-4eb6-b56d-37db9cf6e5ba",
+    "name":  "BCALToolbox System",
+    "publisher":  "Helgesen Consulting, Inc.",
+    "brief":  "Often-Used behind-the-scenes pieces of code, used by other apps",
+    "description":  "Often-Used behind-the-scenes pieces of code, used by other apps. Icons made by Prosymbols from www.flaticon.com",
+    "version":  "0.1.210622.0",
+    "privacyStatement":  "",
+    "EULA":  "",
+    "help":  "",
+    "url":  "",
+    "logo":  "ExtensionLogo.png",
+    "screenshots":  [
+
+                    ],
+    "application":  "18.0.0.0",
+    "platform":  "18.0.0.0",
+    "idRanges":  [
+                     {
+                         "from":  81500,
+                         "to":  81599
+                     }
+                 ],
+    "showMyCode":  true,
+    "runtime":  "7.0",
+    "contextSensitiveHelpUrl":  "https://docs.msdyn365bc.dev/",
+    "applicationInsightsKey": "00000000-0000-0000-0000-000000000000"
+}

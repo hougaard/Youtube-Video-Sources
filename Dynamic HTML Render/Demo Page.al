@@ -1,6 +1,9 @@
-page 50100 "Demo Page"
+page 50100 "Dynamic HTML Rendering"
 {
-    Caption = 'Demo Page';
+    Caption = 'Dynamics HTML Rendering';
+    UsageCategory = Administration;
+    ApplicationArea = all;
+
     layout
     {
         area(Content)
@@ -27,7 +30,11 @@ page 50100 "Demo Page"
         for r := 1 to rows do begin
             out += '<tr>';
             for c := 1 to Columns do begin
-                out += '<td>' + GL.Name + '</td>';
+                if (c mod 5) = 0 then
+                    out += '<td style="background-color:tomato;">' + GL.Name + '</td>'
+                else
+                    out += '<td style="background-color:powderblue;">' + GL.Name + '</td>';
+
                 GL.Next();
             end;
             out += '</tr>';

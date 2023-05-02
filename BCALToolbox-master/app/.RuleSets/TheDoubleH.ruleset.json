@@ -1,0 +1,26 @@
+{
+    "name": "TheDoubleH",
+    "description": "Helgesen Consulting, Inc's Ruleset",
+    "rules": [
+        {
+            "id": "AA0072",
+            "action": "None",
+            "justification": "Variable naming. Intended to increase readability, but does the opposite"
+        },
+        {
+            "id": "AA0210",
+            "action": "None",
+            "justification": "Filter on field without key. # Bug in CodeCop"
+        },
+        {
+            "id": "AL1025",
+            "action": "Error",
+            "justification": "Invalid XML file"
+        },
+        {
+            "id": "AW0006",
+            "action": "None",
+            "justification": "Should use the UseageCategory and AppArea"
+        }
+    ]
+}

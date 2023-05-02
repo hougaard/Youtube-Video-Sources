@@ -25,9 +25,9 @@ function AttachClickTracker()
 }
 function KeyListen(event)
 {
-    for(var i = 0; i < event.path.length; i++)
+    for(var i = 0; i < event.composedPath().length; i++)
     {
-        var p = event.path[i];
+        var p = event.composedPath()[i];
         if (p.getAttribute('controlname'))
         {
             Microsoft.Dynamics.NAV.InvokeExtensibilityMethod("ControlClicked",[p.getAttribute('controlname')]);

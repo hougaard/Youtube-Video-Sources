@@ -1,7 +1,7 @@
 {
-  "id": "9bd96851-0dd2-4c98-8d3a-a4a982e89ebb",
-  "name": "JobRestarter",
-  "publisher": "Erik Hougaard",
+  "id": "5da06bdc-686f-4019-b56e-e9ea0174a549",
+  "name": "LineNumbers",
+  "publisher": "Default publisher",
   "version": "1.0.0.0",
   "brief": "",
   "description": "",
@@ -16,8 +16,8 @@
   "application": "21.0.0.0",
   "idRanges": [
     {
-      "from": 54600,
-      "to": 54649
+      "from": 50100,
+      "to": 50149
     }
   ],
   "resourceExposurePolicy": {
