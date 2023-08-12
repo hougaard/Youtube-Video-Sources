@@ -1,0 +1,1 @@
+c:\working\youtube\BCURL\BCURLTest\BCURLTest.csproj;x86
