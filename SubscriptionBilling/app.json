@@ -1,0 +1,32 @@
+{
+"id": "9874193a-469e-4305-92bd-7934876d139b",
+"name": "Subscription Billing",
+"publisher": "Hougaard",
+"version": "1.0.0.0",
+"brief": "",
+"description": "",
+"privacyStatement": "",
+"EULA": "",
+"help": "",
+"url": "",
+"logo": "",
+"dependencies": [],
+"screenshots": [],
+"platform": "1.0.0.0",
+"application": "22.0.0.0",
+"idRanges": [
+  {
+    "from": 54100,
+    "to": 54149
+  }
+],
+"resourceExposurePolicy": {
+  "allowDebugging": true,
+  "allowDownloadingSource": true,
+  "includeSourceInSymbolFile": true
+},
+"runtime": "11.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
