@@ -1,6 +1,6 @@
 {
-  "id": "08787eab-1356-45cf-960d-fc70b33f1610",
-  "name": "EventRecorder",
+  "id": "c700279a-e3d3-4398-9953-0c6be8e73afb",
+  "name": "ImageManipulation",
   "publisher": "Default publisher",
   "version": "1.0.0.0",
   "brief": "",
@@ -13,11 +13,11 @@
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "22.0.0.0",
+  "application": "23.0.0.0",
   "idRanges": [
     {
-      "from": 50100,
-      "to": 50149
+      "from": 56100,
+      "to": 57149
     }
   ],
   "resourceExposurePolicy": {
@@ -25,7 +25,7 @@
     "allowDownloadingSource": true,
     "includeSourceInSymbolFile": true
   },
-  "runtime": "11.0",
+  "runtime": "12.0",
   "features": [
     "NoImplicitWith"
   ]

@@ -1,6 +1,6 @@
 {
-  "id": "08787eab-1356-45cf-960d-fc70b33f1610",
-  "name": "EventRecorder",
+  "id": "21734f31-c606-403d-b881-680d5c445d21",
+  "name": "promptdialog",
   "publisher": "Default publisher",
   "version": "1.0.0.0",
   "brief": "",
@@ -13,7 +13,7 @@
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "22.0.0.0",
+  "application": "23.0.0.0",
   "idRanges": [
     {
       "from": 50100,
@@ -25,7 +25,7 @@
     "allowDownloadingSource": true,
     "includeSourceInSymbolFile": true
   },
-  "runtime": "11.0",
+  "runtime": "12.1",
   "features": [
     "NoImplicitWith"
   ]
