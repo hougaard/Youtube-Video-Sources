@@ -11,6 +11,7 @@ Query 50131 "Query in Search"
     UsageCategory = ReportsAndAnalysis;
     QueryType = Normal;
     Caption = 'Query in Search';
+    ApplicationArea = all;
     elements
     {
         dataitem(Customer; Customer)
