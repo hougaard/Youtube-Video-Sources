@@ -56,4 +56,36 @@ codeunit 50100 "SharePoint Examples"
             end;
         end;
     end;
+
+    procedure GenerateFile(Ref: RecordRef)
+    var
+        Mapping: Record "Table Mapping EFQ";
+        Template: Record "Document Template EFQ";
+        SP: Codeunit "SharePoint EFQ";
+        Folder: Text;
+        Token: Text;
+        NewFileName: Text;
+        InS: InStream;
+    begin
+        // Inputs
+        // ======
+        // Ref = RecordRef to the record the file we should get files from
+
+        // Let's make sure we have a valid connection active to SharePoint
+        SP.GetAccessTokenAgain(Token);
+        SP.StoreAccessToken(Token);
+        // Find the basic mapping (subsite etc.)
+        SP.GetTableMapping(Mapping, Ref.Number);
+        // Find the folder for the related record
+        Folder := SP.GetFolderForRecord(Ref, true);
+
+        // Get the SharePoint Document Template for the Customer Order Summary (Report No. 107)
+        Template.Get(18, 107, '');
+
+        NewFileName := SP.GenerateDocument(Template, Ref, Folder, 'new filename.pdf');
+        if NewFileName <> '' then
+            SP.FilloutCustomColumns(Mapping, Folder, NewFileName, Ref)
+        else
+            error('The report did not produce any output');
+    end;
 }
