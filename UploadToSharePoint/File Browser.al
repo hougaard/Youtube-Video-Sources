@@ -34,8 +34,7 @@ page 50100 "SharePoint File Browser"
                         case Rec.Type of
                             Rec.Type::File:
                                 begin
-                                    //OnBeforeOpenSharePointFile(Rec, Handled);
-                                    OnBeforeOpenSharePointFile2(Rec, Handled);
+                                    OnBeforeOpenSharePointFile(Rec, Handled);
                                     if Handled then
                                         exit;
                                     if Setup.GET() then
@@ -481,14 +480,8 @@ page 50100 "SharePoint File Browser"
         PageIsEditable := _PageIsEditable;
     end;
 
-    [Obsolete('Replace by OnBeforeOpenSharePointFile2 event')]
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeOpenSharePointFile(var Rec: Record "SharePoint File EFQ" temporary; Handled: Boolean)
-    begin
-    end;
-
-    [IntegrationEvent(false, false)]
-    local procedure OnBeforeOpenSharePointFile2(var Rec: Record "SharePoint File EFQ" temporary; var Handled: Boolean)
+    local procedure OnBeforeOpenSharePointFile(var Rec: Record "SharePoint File EFQ" temporary; var Handled: Boolean)
     begin
     end;
 
