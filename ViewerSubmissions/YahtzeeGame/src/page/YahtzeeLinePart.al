@@ -83,7 +83,6 @@ page 54581 "Yahtzee Line Part"
 
     var
         Engine: Codeunit Yahtzee;
-        [InDataSet]
         ChanceApplied: Boolean;
 
 
