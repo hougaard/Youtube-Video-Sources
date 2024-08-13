@@ -57,6 +57,30 @@ codeunit 50100 "SharePoint Examples"
         end;
     end;
 
+    procedure CreateFolderAndAutoFolders(Ref: RecordRef)
+    var
+        Mapping: Record "Table Mapping EFQ";
+        SP: Codeunit "SharePoint EFQ";
+        Folder: Text;
+        Token: Text;
+    begin
+        // Inputs
+        // ======
+        // Ref = RecordRef to the record the file should be uploaded to
+        // InS = InStream to the content of the file
+        // FileName = Name for the file
+
+        // Let's make sure we have a valid connection active to SharePoint
+        SP.GetAccessTokenAgain(Token);
+        SP.StoreAccessToken(Token);
+        // Find the basic mapping (subsite etc.)
+        SP.GetTableMapping(Mapping, Ref.Number);
+        // Find the folder for the related record
+        Folder := SP.GetFolderForRecord(Ref, true); // true=create
+
+        SP.CreateSubfolders(Mapping, Ref.Number(), Folder);
+    end;
+
     procedure HasFiles(Ref: RecordRef): Boolean
     var
         FolderContent: Record "SharePoint File EFQ" temporary;
