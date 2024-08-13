@@ -67,8 +67,6 @@ codeunit 50100 "SharePoint Examples"
         // Inputs
         // ======
         // Ref = RecordRef to the record the file should be uploaded to
-        // InS = InStream to the content of the file
-        // FileName = Name for the file
 
         // Let's make sure we have a valid connection active to SharePoint
         SP.GetAccessTokenAgain(Token);
@@ -76,8 +74,9 @@ codeunit 50100 "SharePoint Examples"
         // Find the basic mapping (subsite etc.)
         SP.GetTableMapping(Mapping, Ref.Number);
         // Find the folder for the related record
-        Folder := SP.GetFolderForRecord(Ref, true); // true=create
+        Folder := SP.GetFolderForRecord(Ref, true); // true=create the folder
 
+        // Create subfolder is subfolders are defined for this table
         SP.CreateSubfolders(Mapping, Ref.Number(), Folder);
     end;
 
