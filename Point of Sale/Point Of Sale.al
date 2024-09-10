@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 57100 "Point of sale"
 {
     Caption = 'Point of Sale';
@@ -137,11 +138,11 @@ page 57100 "Point of sale"
         SH.Init();
         SH."Document Type" := SH."Document Type"::Invoice;
         SH.Insert(true);
-        Setfilter("No.", SH."No.");
-        FindFirst();
-        Validate("Sell-to Customer No.", Setup."Cash Customer");
-        Validate("Posting Date", TODAY());
-        Modify(true);
+        Rec.Setfilter("No.", SH."No.");
+        Rec.FindFirst();
+        Rec.Validate("Sell-to Customer No.", Setup."Cash Customer");
+        Rec.Validate("Posting Date", TODAY());
+        Rec.Modify(true);
         PosStatus := PosStatus::"Receipt Active";
     end;
 
@@ -151,7 +152,7 @@ page 57100 "Point of sale"
         NextNo: Integer;
         Release: Codeunit "Release Sales Document";
     begin
-        Release.Reopen(Rec);
+        //Release.Reopen(Rec);
         SL.setrange("Document Type", Rec."Document Type");
         SL.Setrange("Document No.", Rec."No.");
         SL.Setrange(Type, SL.Type::Item);
@@ -177,15 +178,16 @@ page 57100 "Point of sale"
             SL.Validate(Quantity, 1);
             Sl.Modify(true);
         end;
-        Release.Run(Rec);
+        CurrPage.Update(false);
+        //Release.Run(Rec);
     end;
 
     local procedure PayAndPost(PM: Record "Payment Method")
     var
         Post: Codeunit "Sales-Post";
     begin
-        Validate("Payment Method Code", PM.Code);
-        Modify(true);
+        Rec.Validate("Payment Method Code", PM.Code);
+        Rec.Modify(true);
         Post.SetSuppressCommit(true);
         Post.Run(Rec);
         // setfilter("No.", '%1', '');
@@ -199,3 +201,4 @@ page 57100 "Point of sale"
     var
         PosStatus: Option "Awaiting new Receipt","Receipt Active";
 }
+#pragma implicitwith restore

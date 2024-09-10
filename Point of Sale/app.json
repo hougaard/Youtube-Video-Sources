@@ -10,7 +10,7 @@
   "help": "",
   "url": "",
   "logo": "",
-  "application": "18.0.0.0",
+  "application": "24.0.0.0",
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
@@ -24,6 +24,11 @@
     "TranslationFile"
   ],
   "contextSensitiveHelpUrl": "https://hougaard.com/help/",
-  "showMyCode": true,
-  "runtime": "8.0"
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "applyToDevExtension":  true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "13.0"
 }

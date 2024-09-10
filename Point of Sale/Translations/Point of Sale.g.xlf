@@ -153,11 +153,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page POS Setup - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 2500762320 - Action 3732224266 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4043066029">
-          <source>Test</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Something new - Action Test - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 3566004263 - Field 1863350370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3566004263">
           <source>POS Payment</source>
           <note from="Developer" annotates="general" priority="2"></note>

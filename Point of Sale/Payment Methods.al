@@ -21,7 +21,7 @@ pageextension 57100 "Payment Method" extends "Payment Methods"
     {
         addafter("Bal. Account No.")
         {
-            field("POS Payment"; "POS Payment")
+            field("POS Payment"; Rec."POS Payment")
             {
                 ApplicationArea = all;
             }

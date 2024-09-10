@@ -14,6 +14,7 @@ table 57100 "POS Setup"
         }
     }
 }
+#pragma implicitwith disable
 page 57104 "POS Setup"
 {
     Caption = 'POS Setup';
@@ -24,7 +25,7 @@ page 57104 "POS Setup"
     {
         area(Content)
         {
-            field("Cash Customer"; "Cash Customer")
+            field("Cash Customer"; Rec."Cash Customer")
             {
                 ApplicationArea = All;
             }
@@ -32,7 +33,8 @@ page 57104 "POS Setup"
     }
     trigger OnOpenPage()
     begin
-        if isempty() then
-            insert();
+        if Rec.isempty() then
+            Rec.insert();
     end;
 }
+#pragma implicitwith restore

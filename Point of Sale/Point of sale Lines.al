@@ -41,9 +41,9 @@ page 57101 "POS Lines"
             {
                 Caption = 'VIP';
                 ApplicationArea = all;
-                Promoted = true;
-                PromotedOnly = true;
-                PromotedCategory = Process;
+                // Promoted = true;
+                // PromotedOnly = true;
+                // PromotedCategory = Process;
                 AboutTitle = 'VIP Customer';
                 AboutText = 'Specify if this is a VIP customer!';
                 trigger OnAction()

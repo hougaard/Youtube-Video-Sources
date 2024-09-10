@@ -9,7 +9,7 @@ page 57103 "Select Payment"
         {
             repeater(Rep)
             {
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = all;
                 }
