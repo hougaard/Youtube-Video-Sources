@@ -11,10 +11,18 @@ report 50100 "Create Item Folders"
             RequestFilterFields = "No.", "Inventory Posting Group";
             trigger OnAfterGetRecord()
             var
+                Mapping: Record "Table Mapping EFQ";
                 Ref: RecordRef;
+                Folder: Text;
             begin
                 Ref.GetTable(Item);
-                SP.GetFolderForRecord(Ref, true);
+
+                // Create the main folder
+                Folder := SP.GetFolderForRecord(Ref, true);
+
+                // Create Sub Folders is any.
+                SP.GetTableMapping(Mapping, DATABASE::Item);
+                SP.CreateSubfolders(Mapping, DATABASE::Item, Folder);
             end;
 
             trigger OnPreDataItem()
