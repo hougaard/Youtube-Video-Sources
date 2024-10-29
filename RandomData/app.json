@@ -1,6 +1,6 @@
 {
-  "id": "7fe4b707-4fef-4775-941c-c554e6a861dc",
-  "name": "QueryInSearch",
+  "id": "f6da6d4f-eac7-496e-b4e9-f3676fbe31db",
+  "name": "RandomData",
   "publisher": "Default Publisher",
   "version": "1.0.0.0",
   "brief": "",
@@ -13,7 +13,7 @@
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "23.0.0.0",
+  "application": "24.0.0.0",
   "idRanges": [
     {
       "from": 50100,

@@ -1,7 +1,7 @@
 {
-  "id": "7fe4b707-4fef-4775-941c-c554e6a861dc",
-  "name": "QueryInSearch",
-  "publisher": "Default Publisher",
+  "id": "e53ea4a4-78c5-4c8e-96ca-9911558a191a",
+  "name": "Better User Management",
+  "publisher": "Hougaard",
   "version": "1.0.0.0",
   "brief": "",
   "description": "",
@@ -13,7 +13,7 @@
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "23.0.0.0",
+  "application": "25.0.0.0",
   "idRanges": [
     {
       "from": 50100,
@@ -25,7 +25,7 @@
     "allowDownloadingSource": true,
     "includeSourceInSymbolFile": true
   },
-  "runtime": "13.0",
+  "runtime": "14.0",
   "features": [
     "NoImplicitWith"
   ]

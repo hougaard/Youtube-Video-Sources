@@ -1,6 +1,6 @@
 {
-  "id": "7fe4b707-4fef-4775-941c-c554e6a861dc",
-  "name": "QueryInSearch",
+  "id": "27b30fa5-54ff-41af-9ef5-bcd41dfc5377",
+  "name": "WhatsNewinBC25",
   "publisher": "Default Publisher",
   "version": "1.0.0.0",
   "brief": "",
@@ -13,7 +13,7 @@
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "23.0.0.0",
+  "application": "25.0.0.0",
   "idRanges": [
     {
       "from": 50100,
@@ -25,7 +25,7 @@
     "allowDownloadingSource": true,
     "includeSourceInSymbolFile": true
   },
-  "runtime": "13.0",
+  "runtime": "14.1",
   "features": [
     "NoImplicitWith"
   ]
