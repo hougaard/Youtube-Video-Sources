@@ -1,0 +1,63 @@
+{
+  "id": "e45ee110-3d5e-4ea9-a82a-885d6b1b168c",
+  "name": "Nuget",
+  "publisher": "Default Publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "decade24-c001-1eaf-cafe-cab1ea11abba",
+      "name": "Advanced Portal Designer",
+      "publisher": "Hougaard",
+      "version": "3.0.0.0"
+    },
+    {
+      "id": "23ebd065-b289-4a68-85e3-b8410e360157",
+      "name": "SharePoint Connector",
+      "publisher": "hougaard.com",
+      "version": "5.0.0.8"
+    },
+    {
+      "id": "5fedf952-2450-4bce-b578-f3b7c13cd9a9",
+      "name": "Avalara AvaTax",
+      "publisher": "Avalara",
+      "version": "16.0.7.2"
+    },
+    {
+      "id": "91445282-543f-41e8-825c-a1186639bb82",
+      "name": "WooCommerce Connector",
+      "publisher": "Synfynal",
+      "version": "23.0.0.0"
+    },
+    {
+      "id": "8d4eab29-8c7f-4b6c-be9a-b7fdfb9da196",
+      "name": "Continia Expense Management",
+      "publisher": "Continia Software",
+      "version": "12.2.0.333892"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "25.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "14.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
