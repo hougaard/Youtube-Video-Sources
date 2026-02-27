@@ -44,7 +44,6 @@ page 54582 "Yahtzee Score Part"
     end;
 
     var
-        [InDataSet]
         BestScore: Integer;
 
 }

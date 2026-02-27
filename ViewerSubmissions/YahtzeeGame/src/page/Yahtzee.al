@@ -377,10 +377,8 @@ page 54580 Yahtzee
         stat: Array[6] of Integer;
         ShowDiceValue: Boolean;
         // PageState Vars
-        [InDataSet]
         GameRunning: Boolean;
         CurrGameId: Integer;
         CanRollDice: Boolean;
-        [InDataSet]
         DiceRoundNum: Integer;
 }

@@ -79,7 +79,6 @@ page 54583 "Yahtzee setup"
         Setup: Record "Yahtzee Data Setup";
         LblClearHistoryAction: Label 'Clear game history';
         LblCleanupDone: Label 'Cleanup done!';
-        [InDataSet]
         CleanupDone: Boolean;
 
 
